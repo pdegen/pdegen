@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
+title: My Webpage
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my webpage!
@@ -55,9 +55,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "Peter Degen"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Welcome to my webpage!"
+  bio    : "PhD Computational Biology. Data science and software engineering enthusiast. Organizer at Swiss Reproducibility Network Academy. Volunteer at Amnesty International."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
@@ -79,7 +79,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
   # _pages
   - scope:
