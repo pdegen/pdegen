@@ -10,5 +10,5 @@ Data science, machine learning, bioinformatics, open science, game development, 
 
 ## Technologies
 
-<img src="https://companieslogo.com/img/orig/U-ea48bc1d.png" alt="Unity logo" height="80"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png" alt="Vue.js Logo" height="80"/> <img src="https://avatars.githubusercontent.com/u/33450111?s=200&v=4" alt="Snakemake Logo" height="80"/>  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt="scklearn logo" height="80"/>
+<img src="https://avatars.githubusercontent.com/u/33450111?s=200&v=4" alt="Snakemake Logo" height="80"/> <img src="https://companieslogo.com/img/orig/U-ea48bc1d.png" alt="Unity logo" height="80"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/2367px-Vue.js_Logo_2.svg.png" alt="Vue.js Logo" height="80"/> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt="scklearn logo" height="80"/>
 
