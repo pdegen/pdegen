@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "Peter Degen"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "PhD Computational Biology. Data science and software engineering enthusiast. Organizer at Swiss Reproducibility Network Academy. Volunteer at Amnesty International."
+  bio    : "PhD Computational Biology. Data science and software engineering enthusiast. Organizer at Swiss Reproducibility Network Academy. Treasurer at Amnesty International."
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

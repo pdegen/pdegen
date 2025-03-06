@@ -1,12 +1,19 @@
 ---
 title: "Certificate List"
-last_modified_at: 2025-01-22 #T16:20:02-05:00
+last_modified_at: 2025-03-06 #T16:20:02-05:00
 categories:
   - List
 tags:
   - Achievements
 ---
 ## Certificates
+
+### [Python: Coding Guidelines, Tools, Tests and Packages](https://www.udemy.com/certificate/UC-8ae94de0-0a07-46e5-8733-22cf53fbfda6/)
+
+- Organization: Udemy
+- Description: Step ahead in your Python career and learn about PEP8, Unit-Testing (TDD), Type Annotations and Python Packaging.
+- Length: 5.5 hours
+- Date: March 6, 2025
 
 ### [The Git & Github Bootcamp](https://www.udemy.com/certificate/UC-903e71c9-410e-4a5f-a732-569f46d3660a/)
 
