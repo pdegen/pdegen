@@ -8,6 +8,13 @@ tags:
 ---
 ## Certificates
 
+### [SIB PhD Training Network](https://github.com/pdegen/udemy-certificates/blob/main/certificates/2025_Peter-Degen.pdf)
+
+- Organization:  Swiss Institute of Bioinformatics
+- Description: The SIB PhD Training Network fosters interactions and exchanges among PhD students and trains them in the most up-to-date bioinformatics methods and tools necessary for their doctoral research.
+- Length: 2022–2024
+- Date: March 10, 2025
+
 ### [Python: Coding Guidelines, Tools, Tests and Packages](https://www.udemy.com/certificate/UC-8ae94de0-0a07-46e5-8733-22cf53fbfda6/)
 
 - Organization: Udemy
