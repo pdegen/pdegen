@@ -5,7 +5,7 @@
 */
 //
 // Scripts
-// 
+//
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     };
 
-    // Shrink the navbar 
+    // Shrink the navbar
     navbarShrink();
 
     // Shrink the navbar when page is scrolled
@@ -51,4 +51,35 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+});
+
+// Custom methods
+
+document.addEventListener("DOMContentLoaded", function () {
+    const progressBars = document.querySelectorAll('.progress-bar');
+
+    function animateBars() {
+        progressBars.forEach(bar => {
+            const value = bar.getAttribute('data-value');
+            if (bar.getAttribute('data-animated')) return;
+
+            bar.style.width = value + '%';
+            bar.textContent = value + '%';
+            bar.setAttribute('data-animated', 'true');
+        });
+    }
+
+    // Detect when the section is in view
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateBars();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) {
+        observer.observe(skillsSection);
+    }
 });

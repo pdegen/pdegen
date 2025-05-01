@@ -10831,7 +10831,7 @@ html {
 }
 
 .page-section {
-  padding: 4rem 0 0 0;
+  padding: 3rem 0 3rem 0;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
@@ -11045,6 +11045,9 @@ html {
   background-color: #1a252f;
 }
 
+
+/* CUSTOM STYLES */
+
 .timeline {
   position: relative;
   padding-left: 40px;
@@ -11067,4 +11070,9 @@ html {
 }
 .timeline-content {
   padding-left: 60px;
+}
+
+.progress {
+    height: 25px;
+    font-weight: bold;
 }
