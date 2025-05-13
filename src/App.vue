@@ -328,11 +328,12 @@
             <br />
             In my free time, I'm an avid reader, film enthusiast, and volunteer for various human
             rights causes. I enjoy hiking in the Swiss mountains and teaming up with creative people
-            to make small video games. I'm also learning web dev on the side... (<a
+            to make small video games. I'm also learning web dev on the side...
+            <!---(<a
               href="sandbox.html"
               style="color: white"
               >Sandbox</a
-            >)
+            >)--->
             <br />
             <br />
           </p>
