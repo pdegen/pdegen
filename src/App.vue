@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import ImageGallery from '@/components/ImageGallery.vue'
+</script>
+
 <template>
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -57,12 +61,13 @@
     </div>
   </header>
 
+  <ImageGallery />
+
   <!-- CV Section -->
   <section class="page-section cv bg-light" id="cv">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Curriculum Vitae
     </h2>
-
     <!-- Icon Divider-->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
@@ -328,12 +333,11 @@
             <br />
             In my free time, I'm an avid reader, film enthusiast, and volunteer for various human
             rights causes. I enjoy hiking in the Swiss mountains and teaming up with creative people
-            to make small video games. I'm also learning web dev on the side...
-            <!---(<a
+            to make small video games. I'm also learning web dev on the side... (<a
               href="sandbox.html"
               style="color: white"
               >Sandbox</a
-            >)--->
+            >)
             <br />
             <br />
           </p>
