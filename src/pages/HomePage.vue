@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { navbarHandler, progressbarHandler } from '@/assets/js/scripts.ts'
+
 onMounted(() => {
   requestAnimationFrame(() => {
     navbarHandler()
@@ -62,9 +63,8 @@ onMounted(() => {
       </div>
       <!-- Masthead Subheading-->
       <p class="masthead-subheading font-weight-light mb-0">
-        PhD Computational Biology - Open Science Advocate - Coding Geek - Human Rights Activist
+        PhD Computational Biology - Open Science Advocate - Coding Geek
       </p>
-      <p class="masthead-subheading"><br /><br />Website Under Construction...</p>
     </div>
   </header>
 

@@ -107,7 +107,7 @@ onMounted(() => {
 
   <!-- Gallery Section -->
   <section class="page-section cv bg-light" id="gallery">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cool Films</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Cool Movies</h2>
 
     <!-- Icon Divider-->
     <div class="divider-custom">
