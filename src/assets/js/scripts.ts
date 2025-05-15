@@ -30,8 +30,10 @@ export function navbarHandler() {
   }
 
   // Collapse responsive navbar when toggler is visible
-  const navbarToggler = document.body.querySelector('.navbar-toggler')
-  const responsiveNavItems = [].slice.call(document.querySelectorAll('#navbarResponsive .nav-link'))
+  const navbarToggler = document.body.querySelector('.navbar-toggler') as HTMLElement | null
+  const responsiveNavItems = Array.from(
+    document.querySelectorAll('#navbarResponsive .nav-link'),
+  ) as HTMLElement[]
   if (navbarToggler == null) return
   responsiveNavItems.map(function (responsiveNavItem) {
     responsiveNavItem.addEventListener('click', () => {
@@ -45,7 +47,7 @@ export function navbarHandler() {
 // Custom methods
 
 export function progressbarHandler(section_name: string) {
-  const progressBars = document.querySelectorAll('.progress-bar')
+  const progressBars = document.querySelectorAll<HTMLElement>('.progress-bar')
 
   function animateBars() {
     progressBars.forEach((bar) => {

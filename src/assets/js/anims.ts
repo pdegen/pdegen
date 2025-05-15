@@ -1,5 +1,7 @@
 // anims.ts
 
+declare const gsap: typeof import('gsap').gsap
+
 export function animateBalls({ amplitude = 50, speed = 2 } = {}) {
   const balls = document.querySelectorAll('.ball')
   if (!balls.length) return

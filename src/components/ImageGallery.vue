@@ -87,13 +87,16 @@ const images: image_model[] = [
   },
 ]
 
-const modalData = ref({})
+const modalData = ref<image_model>(images[0])
 const modal = ref(null)
 
 const openModal = (img: image_model) => {
   modalData.value = img
-  const bsModal = new bootstrap.Modal(modal.value)
-  bsModal.show()
+
+  if (modal.value) {
+    const bsModal = new bootstrap.Modal(modal.value)
+    bsModal.show()
+  }
 }
 </script>
 

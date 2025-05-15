@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, watch } from 'vue'
+import { onMounted } from 'vue'
 import ImageGallery from '@/components/ImageGallery.vue'
 import { animateBalls } from '@/assets/js/anims.ts'
 import { navbarHandler } from '@/assets/js/scripts.ts'
