@@ -36,6 +36,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import * as bootstrap from 'bootstrap'
 
 type image_model = {
   src: string
