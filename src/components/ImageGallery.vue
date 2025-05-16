@@ -1,20 +1,82 @@
 <template>
   <div class="container">
-    <div class="text-center">
-      Click the button to see a random selection of my favourite movies!
+    <div class="text-center" v-if="!gameEnded">
+      <h3>Streak: {{ winStreak }}</h3>
+      <h4>
+        {{ submittedWrongGuess ? 'Incorrect!' : submittedGuess ? 'Correct!' : '' }}
+      </h4>
+      <!-- Click the button to see a random selection of my favourite movies!
       <br />
       <br />
-      <button type="button" class="btn btn-primary btn-lg" @click="rollImages">
+      <button type="button" class="btn btn-primary btn-lg" @click="rollImages(4)">
         Re-roll Movies
-      </button>
+      </button> -->
+      <div v-if="gameWon">
+        <p>
+          You've reached a streak of 3 and won the game!<br />Continue playing or reveal the
+          complete movie list by clicking the "End Game" button below.
+        </p>
+      </div>
+    </div>
+    <div class="text-center" v-if="gameEnded">
+      <p>Congrats, you won with a streak of {{ winStreak }}! Here's the complete movie list.</p>
     </div>
     <br />
-    <div class="row g-4">
+    <div class="row g-4" v-if="gameEnded">
       <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-4 col-lg-3">
         <div class="gallery-item position-relative" @click="openModal(img)">
           <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
           <div class="overlay">
-            <p class="text-white">{{ img.title }}</p>
+            <div v-if="revealAnswer">
+              <p class="text-white">{{ img.title }}</p>
+            </div>
+            <div v-else><p class="text-white">?</p></div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" @click="replay()">Play Again</button>
+    </div>
+    <div class="d-flex justify-content-center" v-else>
+      <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+        <div class="gallery-item position-relative" @click="openModal(img)">
+          <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
+          <div class="overlay">
+            <div v-if="revealAnswer">
+              <p class="text-white">{{ img.title }}</p>
+            </div>
+            <div v-else><p class="text-white">?</p></div>
+          </div>
+        </div>
+        <br />
+        <form @submit.prevent="checkAnswer(guess, img.title)">
+          <input
+            v-model="guess"
+            type="text"
+            class="form-control"
+            id="guessAnswer"
+            placeholder="Enter guess"
+          />
+        </form>
+        <p class="text-center">Hit enter to submit.</p>
+        <div class="text-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg"
+            @click="advanceMovieQueue()"
+            :disabled="!submittedGuess"
+          >
+            Next Movie
+          </button>
+          <div v-if="gameWon">
+            <br />
+            <button
+              v-if="gameWon"
+              type="button"
+              class="btn btn-secondary btn-lg"
+              @click="endGame()"
+            >
+              End Game
+            </button>
           </div>
         </div>
       </div>
@@ -34,8 +96,18 @@
           </div>
           <div class="modal-body text-center">
             <img :src="modalData.src" class="img-fluid rounded mb-3" :alt="modalData.title" />
-            <h5>{{ modalData.title }}</h5>
-            <p>{{ modalData.desc }}</p>
+            <div v-if="revealAnswer">
+              <h5>{{ modalData.title }}</h5>
+              <p>{{ modalData.desc }}</p>
+            </div>
+            <div v-else>
+              <div v-if="!revealHint">
+                <button type="button" class="btn btn-secondary" @click="revealHint = true">
+                  Hint
+                </button>
+              </div>
+              <div v-else>{{ modalData.desc }}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -106,9 +178,9 @@ const images: image_modal[] = [
     desc: 'Andrei Tarkovsky, 1979',
   },
   {
-    src: 'https://image.tmdb.org/t/p/original/cR4n0ts9NU1MnDBeHdRwQCmlHOh.jpg',
-    title: 'Twin Peaks: The Return',
-    desc: 'David Lynch, 2017',
+    src: 'https://image.tmdb.org/t/p/original/g5G19q0xgkzWEvfcGo1KcL8nQOk.jpg',
+    title: 'Twin Peaks: Fire Walk with Me',
+    desc: 'David Lynch, 1992',
   },
   {
     src: 'https://image.tmdb.org/t/p/original/yFfOnVynWSsDbpyYLY8cJMff44V.jpg',
@@ -200,24 +272,93 @@ const images: image_modal[] = [
     title: 'Raise the Red Lantern',
     desc: 'Zhang Yimou, 1991',
   },
+  {
+    src: 'https://image.tmdb.org/t/p/original/foFq1RZWQIgFuCQ0nyYccywjFyX.jpg',
+    title: 'Portrait of a Lady on Fire',
+    desc: 'Céline Sciamma, 2019',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/d5l2ITQvpgP0dcWCAG6PUvp8YZw.jpg',
+    title: 'Aftersun',
+    desc: 'Charlotte Wells, 2022',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/jy1wkkJnVbKkGRStg2XLFZf6Jx6.jpg',
+    title: 'Aftersun',
+    desc: 'Mikhail Kalatozov, 1957',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/3nQm5pMc2mJTCNnjfDOrmVD7xNX.jpg',
+    title: 'Ran',
+    desc: 'Akia Kurosawa, 1985',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/nC3IjYhUgZWgfKfFX0ygMigFwgc.jpg',
+    title: 'Harakiri',
+    desc: 'Masaki Kobyasahi, 1962',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/d8qNbjFya51BxZga9mq0863NwHk.jpg',
+    title: 'Landscape in the Mist',
+    desc: 'Theo Angelopoulos, 1988',
+  },
+  {
+    src: 'https://image.tmdb.org/t/p/original/KV2f8ifE4NeyVxPvRIZxsfdxyg.jpg',
+    title: 'Aliens',
+    desc: 'James Cameron, 1986',
+  },
 ]
+
+let shuffled = [...images].sort(() => 0.5 - Math.random())
 
 // TO DO: small game where user guesses film title/director/year
 
 // Reactive selected images
 const selectedImages = ref<image_modal[]>([])
-
-// Shuffle and pick 4
-function rollImages() {
-  const shuffled = [...images].sort(() => 0.5 - Math.random())
-  selectedImages.value = shuffled.slice(0, 4)
-}
-
-// Initialize selection
-rollImages()
-
 const modalData = ref<image_modal>(images[0])
 const modal = ref(null)
+const submittedGuess = ref(false)
+const submittedWrongGuess = ref(false)
+const revealAnswer = ref<boolean>(false)
+const revealHint = ref<boolean>(false)
+const guess = ref<string>('')
+const gameWon = ref<boolean>(false)
+const gameEnded = ref<boolean>(false)
+const winStreak = ref(0)
+let currentFilmIndex: number = 0
+
+// // Shuffle and pick n
+// const rollImages = (n: number = 4) => {
+//   const shuffled = [...images].sort(() => 0.5 - Math.random())
+//   selectedImages.value = shuffled.slice(0, n)
+//   revealHint.value = false
+//   revealAnswer.value = false
+// }
+
+// note param can not be called guess since it would shadow the guess ref
+const checkAnswer = (userGuess: string, correctAnswer: string) => {
+  if (submittedGuess.value) return
+
+  if (userGuess.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+    winStreak.value++
+    revealAnswer.value = true
+    submittedWrongGuess.value = false
+  } else {
+    winStreak.value = 0
+    submittedWrongGuess.value = true
+    gameWon.value = false
+  }
+  submittedGuess.value = true
+
+  if (winStreak.value == 3) {
+    gameWon.value = true
+  }
+}
+
+const endGame = () => {
+  selectedImages.value = shuffled
+  gameEnded.value = true
+}
 
 const openModal = (img: image_modal) => {
   modalData.value = img
@@ -227,6 +368,25 @@ const openModal = (img: image_modal) => {
     bsModal.show()
   }
 }
+
+const replay = () => {
+  shuffled = [...images].sort(() => 0.5 - Math.random())
+  gameEnded.value = false
+  gameWon.value = false
+  winStreak.value = 0
+  advanceMovieQueue()
+}
+
+const advanceMovieQueue = () => {
+  currentFilmIndex = currentFilmIndex + 1 == shuffled.length ? 0 : currentFilmIndex + 1
+  selectedImages.value = shuffled.slice(currentFilmIndex, currentFilmIndex + 1)
+  revealHint.value = false
+  revealAnswer.value = false
+  submittedGuess.value = false
+  submittedWrongGuess.value = false
+}
+// Initialize selection
+advanceMovieQueue()
 </script>
 
 <style>
