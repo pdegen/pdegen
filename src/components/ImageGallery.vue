@@ -2,7 +2,7 @@
   <div class="container">
     <div class="text-center" v-if="!gameEnded">
       <p>Why, my favorite movies? I'm glad you asked!</p>
-      <h4 v-if="!submittedGuess">Guess the movie title</h4>
+      <h4 v-if="!submittedGuess">Guess the movie</h4>
       <h4 v-else-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-danger">
         Incorrect!
       </h4>
