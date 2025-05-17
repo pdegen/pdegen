@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="text-center" v-if="!gameEnded">
-      Why, my favorite movies? I'm glad you asked!
+      <p>Why, my favorite movies? I'm glad you asked!</p>
       <h4 v-if="!submittedGuess">Guess the movie title</h4>
       <h4 v-else-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-danger">
         Incorrect!
@@ -27,14 +27,15 @@
       </div>
     </div>
     <div class="text-center" v-if="gameEnded">
+      <h3>🎉 Congratulations! 🎉</h3>
       <p>
-        Congrats, you won with a streak of {{ winStreak }}! As a reward, you get to to behold the
-        complete movie list.
+        You won with a streak of {{ winStreak }}! As a reward, you get to to behold the complete
+        list of movies.
       </p>
     </div>
     <br />
     <div class="row g-4" v-if="gameEnded">
-      <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+      <div v-for="(img, index) in shuffled" :key="index" class="col-sm-6 col-md-4 col-lg-3">
         <div class="gallery-item position-relative" @click="openModal(img)">
           <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
           <div class="overlay">

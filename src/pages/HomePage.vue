@@ -8,6 +8,8 @@ onMounted(() => {
     progressbarHandler('#skills')
   })
 })
+
+const isDev = import.meta.env.MODE === 'development'
 </script>
 
 <template>
@@ -339,9 +341,14 @@ onMounted(() => {
             In my free time, I'm an avid reader, film enthusiast, and volunteer for various human
             rights causes. I enjoy hiking in the Swiss mountains and teaming up with creative people
             to make small video games. I'm also learning web dev on the side...
-            <router-link to="/sandbox" style="color: white">(Sandbox)</router-link>
+
             <br />
             <br />
+            Want to know more? Visit...
+            <br />
+            <router-link to="/lounge" class="text-white text-center"
+              ><h3>The Lounge</h3></router-link
+            >
           </p>
         </div>
       </div>
@@ -375,6 +382,9 @@ onMounted(() => {
   <!-- Copyright Section-->
   <div class="copyright py-4 text-center text-white">
     <div class="container"><small>Copyright &copy; Peter Degen 2025</small></div>
+    <div v-if="isDev">
+      <router-link to="/sandbox" class="text-white">(Super Secret Sandbox)</router-link>
+    </div>
   </div>
   <!-- Portfolio Modals-->
   <!-- Portfolio Modal 1-->

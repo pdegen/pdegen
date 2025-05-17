@@ -30,19 +30,7 @@ onMounted(() => {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#hub">Hub</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#animations">Animations</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#books">Reading List</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#quotes">Quotes</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
@@ -57,7 +45,7 @@ onMounted(() => {
       <!-- Masthead Avatar Image-->
       <!-- <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /> -->
       <!-- Masthead Heading-->
-      <h1 class="masthead-heading text-uppercase mb-0">Sandbox</h1>
+      <h1 class="masthead-heading text-uppercase mb-0">The Lounge</h1>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -65,70 +53,12 @@ onMounted(() => {
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <p class="masthead-subheading font-weight-light mb-0">Just testing...</p>
+      <p class="masthead-subheading font-weight-light mb-0">More to come...</p>
       <!--<p class="masthead-subheading"><br><br>I use this space to play around with web dev stuff...</p>-->
     </div>
   </header>
 
-  <!-- Hub Section -->
-  <section class="page-section cv bg-light" id="hub">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Hub</h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="text-center">Coming soon...</div>
-  </section>
-
-  <!-- Animations Section -->
-  <section class="page-section cv bg-light" id="animations">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Animations</h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-star"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="container d-flex align-items-center flex-column">
-      <div class="container d-flex align-items-center flex-column">
-        <h3>GSAP</h3>
-        <div class="ball-row" style="padding: 3rem">
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-          <div class="ball bg-secondary"></div>
-          <div class="ball bg-primary"></div>
-        </div>
-      </div>
-
-      <hr />
-      <div class="container d-flex align-items-center flex-column">
-        <h3>Vue.js</h3>
-
-        Coming soon...
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
+  <!-- Movie Section -->
   <section class="page-section cv bg-light" id="gallery">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Movie Guessing Game
@@ -142,38 +72,6 @@ onMounted(() => {
     </div>
 
     <ImageGallery />
-  </section>
-
-  <!-- Books Section -->
-  <section class="page-section cv bg-light" id="books">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Reading List
-    </h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="text-center">Coming soon...</div>
-  </section>
-
-  <!-- Books Section -->
-  <section class="page-section cv bg-light" id="quotes">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Quote of the Day
-    </h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="text-center">Coming soon...</div>
   </section>
 
   <!-- About Section-->

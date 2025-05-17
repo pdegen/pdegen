@@ -1,3 +1,7 @@
-# Ideas
+# To do
 
-- Modal hower dispalys icons of tools/technologies used for project
+- Portfolio modal hower displays icons of tools/technologies used for project
+- Section: quote of the day
+  - Random quote loaded from csv
+- Section: book recommendations
+- Different themes
