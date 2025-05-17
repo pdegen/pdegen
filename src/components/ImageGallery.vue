@@ -1,16 +1,24 @@
 <template>
   <div class="container">
     <div class="text-center" v-if="!gameEnded">
-      <h3>Streak: {{ winStreak }}</h3>
-      <h4>
-        {{ submittedWrongGuess ? 'Incorrect!' : submittedGuess ? 'Correct!' : '' }}
+      Why, my favorite movies? I'm glad you asked!
+      <h4 v-if="!submittedGuess">Guess the movie title</h4>
+      <h4 v-else-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-danger">
+        Incorrect!
       </h4>
-      <!-- Click the button to see a random selection of my favourite movies!
-      <br />
-      <br />
-      <button type="button" class="btn btn-primary btn-lg" @click="rollImages(4)">
-        Re-roll Movies
-      </button> -->
+      <h4 v-else-if="submittedWrongGuessAgain" class="text-danger">Still incorrect!</h4>
+      <h4 v-else-if="submittedGuess" class="text-success">Correct!</h4>
+      <h4>{{ winStreak > 4 ? '🔥' : '' }}Streak: {{ winStreak }}{{ winStreak > 4 ? '🔥' : '' }}</h4>
+
+      <div v-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-center">
+        Last try! Click the screenshot to reveal a hint...
+      </div>
+
+      <div v-else-if="submittedWrongGuessAgain" class="text-center">
+        <h5>{{ selectedImages[0].title }}</h5>
+        <p>{{ selectedImages[0].desc }}</p>
+      </div>
+
       <div v-if="gameWon">
         <p>
           You've reached a streak of 3 and won the game!<br />Continue playing or reveal the
@@ -19,7 +27,10 @@
       </div>
     </div>
     <div class="text-center" v-if="gameEnded">
-      <p>Congrats, you won with a streak of {{ winStreak }}! Here's the complete movie list.</p>
+      <p>
+        Congrats, you won with a streak of {{ winStreak }}! As a reward, you get to to behold the
+        complete movie list.
+      </p>
     </div>
     <br />
     <div class="row g-4" v-if="gameEnded">
@@ -27,10 +38,9 @@
         <div class="gallery-item position-relative" @click="openModal(img)">
           <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
           <div class="overlay">
-            <div v-if="revealAnswer">
+            <div>
               <p class="text-white">{{ img.title }}</p>
             </div>
-            <div v-else><p class="text-white">?</p></div>
           </div>
         </div>
       </div>
@@ -55,9 +65,11 @@
             class="form-control"
             id="guessAnswer"
             placeholder="Enter guess"
+            :disabled="submittedWrongGuessAgain"
           />
         </form>
-        <p class="text-center">Hit enter to submit.</p>
+        <p v-if="!submittedWrongGuessAgain" class="text-center">Hit enter to submit.</p>
+        <p v-else class="text-center">Try again next round...</p>
         <div class="text-center">
           <button
             type="button"
@@ -101,12 +113,12 @@
               <p>{{ modalData.desc }}</p>
             </div>
             <div v-else>
-              <div v-if="!revealHint">
+              <div v-if="!revealHint && canRevealHint">
                 <button type="button" class="btn btn-secondary" @click="revealHint = true">
                   Hint
                 </button>
               </div>
-              <div v-else>{{ modalData.desc }}</div>
+              <div v-else-if="revealHint">{{ modalData.desc }}</div>
             </div>
           </div>
         </div>
@@ -284,7 +296,7 @@ const images: image_modal[] = [
   },
   {
     src: 'https://image.tmdb.org/t/p/original/jy1wkkJnVbKkGRStg2XLFZf6Jx6.jpg',
-    title: 'Aftersun',
+    title: 'The Cranes are Flying',
     desc: 'Mikhail Kalatozov, 1957',
   },
   {
@@ -319,7 +331,9 @@ const modalData = ref<image_modal>(images[0])
 const modal = ref(null)
 const submittedGuess = ref(false)
 const submittedWrongGuess = ref(false)
+const submittedWrongGuessAgain = ref(false)
 const revealAnswer = ref<boolean>(false)
+const canRevealHint = ref<boolean>(false)
 const revealHint = ref<boolean>(false)
 const guess = ref<string>('')
 const gameWon = ref<boolean>(false)
@@ -337,7 +351,7 @@ let currentFilmIndex: number = 0
 
 // note param can not be called guess since it would shadow the guess ref
 const checkAnswer = (userGuess: string, correctAnswer: string) => {
-  if (submittedGuess.value) return
+  if (submittedGuess.value && !submittedWrongGuess.value) return
 
   if (userGuess.trim().toLowerCase() === correctAnswer.toLowerCase()) {
     winStreak.value++
@@ -345,8 +359,15 @@ const checkAnswer = (userGuess: string, correctAnswer: string) => {
     submittedWrongGuess.value = false
   } else {
     winStreak.value = 0
+
+    if (submittedWrongGuess.value) {
+      submittedWrongGuessAgain.value = true
+      revealAnswer.value = true
+    }
+
     submittedWrongGuess.value = true
     gameWon.value = false
+    canRevealHint.value = true
   }
   submittedGuess.value = true
 
@@ -384,6 +405,9 @@ const advanceMovieQueue = () => {
   revealAnswer.value = false
   submittedGuess.value = false
   submittedWrongGuess.value = false
+  submittedWrongGuessAgain.value = false
+  canRevealHint.value = false
+  guess.value = ''
 }
 // Initialize selection
 advanceMovieQueue()

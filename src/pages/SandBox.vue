@@ -33,7 +33,13 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#animations">Animations</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Gallery</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#books">Reading List</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#quotes">Quotes</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
@@ -119,6 +125,38 @@ onMounted(() => {
     </div>
 
     <ImageGallery />
+  </section>
+
+  <!-- Books Section -->
+  <section class="page-section cv bg-light" id="books">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      Reading List
+    </h2>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="text-center">Coming soon...</div>
+  </section>
+
+  <!-- Books Section -->
+  <section class="page-section cv bg-light" id="quotes">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      Quote of the Day
+    </h2>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="text-center">Coming soon...</div>
   </section>
 
   <!-- About Section-->
