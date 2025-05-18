@@ -17,14 +17,19 @@ function parseCSV(): QuoteType[] {
 
   return parsed.data
 }
-function getQuoteOfTheDay(quotes: QuoteType[]): QuoteType {
+function getOneQuote(quotes: QuoteType[]): QuoteType {
   //return quotes[quotes.length - 1]
-  const index = Math.floor((Date.now() / (1000 * 60 * 60 * 24)) % quotes.length)
-  return quotes[index]
+
+  // random quote
+  return quotes[Math.floor(Math.random() * quotes.length)]
+
+  // quote of the day
+  //const index = Math.floor((Date.now() / (1000 * 60 * 60 * 24)) % quotes.length)
+  //return quotes[index]
 }
 
 const quotes = parseCSV()
-const quote = getQuoteOfTheDay(quotes)
+const quote = getOneQuote(quotes)
 </script>
 
 <template>

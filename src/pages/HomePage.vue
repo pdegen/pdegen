@@ -346,6 +346,7 @@ const isDev = import.meta.env.MODE === 'development'
             <br />
             Want to know more? Visit...
             <br />
+            <br />
             <router-link to="/lounge" class="text-white text-center"
               ><h3>The Lounge</h3></router-link
             >

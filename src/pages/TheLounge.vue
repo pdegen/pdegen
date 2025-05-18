@@ -65,9 +65,8 @@ onMounted(() => {
   <!-- Quotes Section -->
   <section class="page-section cv bg-light" id="quotes">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Quote of the Day
+      Random Quote
     </h2>
-
     <!-- Icon Divider-->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
