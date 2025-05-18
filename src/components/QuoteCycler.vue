@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import Papa from 'papaparse'
 import quotesCSV from '@/assets/data/quotes.csv?raw'
 
@@ -17,30 +18,38 @@ function parseCSV(): QuoteType[] {
 
   return parsed.data
 }
-function getOneQuote(quotes: QuoteType[]): QuoteType {
-  //return quotes[quotes.length - 1]
+function getRandomQuote(quotes: QuoteType[]): QuoteType {
+  //const quote = quotes[quotes.length - 1]
 
   // random quote
-  return quotes[Math.floor(Math.random() * quotes.length)]
+  const quote = quotes[Math.floor(Math.random() * quotes.length)]
+  quote.quote.replace(/\\n/g, '<br>')
 
   // quote of the day
   //const index = Math.floor((Date.now() / (1000 * 60 * 60 * 24)) % quotes.length)
-  //return quotes[index]
+  //const quote = quotes[index]
+
+  return quote
 }
 
 const quotes = parseCSV()
-const quote = getOneQuote(quotes)
+const quote = ref<QuoteType>(getRandomQuote(quotes))
+//const quote = ref<QuoteType>(quotes[quotes.length - 1])
 </script>
 
 <template>
   <div class="container text-center">
-    <h4 class="fw-normal">"{{ quote.quote }}"</h4>
+    <h4 class="fw-normal" v-html="`&ldquo;${quote.quote.replace(/\n/g, '<br>')}&rdquo;`"></h4>
     <h5 class="fw-normal">
       —{{ quote.author
       }}<span v-if="quote.work"
         >, <i>{{ quote.work }}</i></span
       >
     </h5>
+    <br />
+    <button type="button" class="btn btn-primary btn-lg" @click="quote = getRandomQuote(quotes)">
+      Re-roll
+    </button>
   </div>
 </template>
 

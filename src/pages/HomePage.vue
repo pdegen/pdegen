@@ -341,18 +341,21 @@ const isDev = import.meta.env.MODE === 'development'
             In my free time, I'm an avid reader, film enthusiast, and volunteer for various human
             rights causes. I enjoy hiking in the Swiss mountains and teaming up with creative people
             to make small video games. I'm also learning web dev on the side...
-
-            <br />
-            <br />
-            Want to know more? Visit...
-            <br />
-            <br />
-            <router-link to="/lounge" class="text-white text-center"
-              ><h3>The Lounge</h3></router-link
-            >
           </p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- About Section-->
+  <section
+    class="page-section text-white mb-0"
+    id="about"
+    style="padding-bottom: 2rem; background-color: #15967d"
+  >
+    <div class="container text-center">
+      Want to know more? Visit...
+      <router-link to="/lounge" class="text-white"><h3>The Lounge</h3></router-link>
     </div>
   </section>
 

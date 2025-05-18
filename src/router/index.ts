@@ -1,5 +1,5 @@
 // src/router/index.js
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 import SandBox from '@/pages/SandBox.vue'
 import TheLounge from '@/pages/TheLounge.vue'
@@ -11,7 +11,7 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHistory('/pdegen/'),
+  history: createWebHashHistory('/pdegen/'), // use hash history because github pages doesn't support dynamic routes
   routes,
   scrollBehavior() {
     return { top: 0 }
