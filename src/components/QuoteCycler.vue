@@ -18,12 +18,16 @@ function parseCSV(): QuoteType[] {
 
   return parsed.data
 }
-function getRandomQuote(quotes: QuoteType[]): QuoteType {
+function getNextQuote(quotes: QuoteType[]): QuoteType {
   //const quote = quotes[quotes.length - 1]
 
   // random quote
-  const quote = quotes[Math.floor(Math.random() * quotes.length)]
-  quote.quote.replace(/\\n/g, '<br>')
+  // const quote = quotes[Math.floor(Math.random() * quotes.length)]
+  // quote.quote.replace(/\\n/g, '<br>')
+
+  // cycle next quote
+  currentQuoteIndex = currentQuoteIndex + 1 == quotes.length ? 0 : currentQuoteIndex + 1
+  const quote = shuffled[currentQuoteIndex]
 
   // quote of the day
   //const index = Math.floor((Date.now() / (1000 * 60 * 60 * 24)) % quotes.length)
@@ -33,7 +37,10 @@ function getRandomQuote(quotes: QuoteType[]): QuoteType {
 }
 
 const quotes = parseCSV()
-const quote = ref<QuoteType>(getRandomQuote(quotes))
+const shuffled = [...quotes].sort(() => 0.5 - Math.random())
+let currentQuoteIndex = 0
+
+const quote = ref<QuoteType>(getNextQuote(shuffled))
 //const quote = ref<QuoteType>(quotes[quotes.length - 1])
 </script>
 
@@ -47,7 +54,7 @@ const quote = ref<QuoteType>(getRandomQuote(quotes))
       >
     </h5>
     <br />
-    <button type="button" class="btn btn-primary btn-lg" @click="quote = getRandomQuote(quotes)">
+    <button type="button" class="btn btn-primary btn-lg" @click="quote = getNextQuote(quotes)">
       Re-roll
     </button>
   </div>
