@@ -19,7 +19,7 @@ const books: Book[] = [
     author: 'Naomi Oreskes and Erik M. Conway',
     cover: 'https://covers.openlibrary.org/b/id/7909667-L.jpg',
     year: 2010,
-    description: 'Lorem ipsum.',
+    description: 'Description Description coming soon...',
   },
   {
     title: 'Doughnut Economics',
@@ -27,7 +27,7 @@ const books: Book[] = [
     author: 'Kate Raworth',
     cover: 'https://covers.openlibrary.org/b/id/8347419-L.jpg',
     year: 2017,
-    description: 'Lorem ipsum.',
+    description: 'Description coming soon...',
   },
   {
     title: 'Educated',
@@ -35,7 +35,8 @@ const books: Book[] = [
     author: 'Tara Westover',
     cover: 'https://covers.openlibrary.org/b/id/14832082-L.jpg',
     year: 2018,
-    description: 'Lorem ipsum.',
+    description:
+      "Powerful memoir chronicling the author's upbringing in an abusive, conspiratorial, hardcore survivalist Mormon household that denied her education and healthcare, and how she eventually escaped this environment. The book's focus on one horrifyingly dysfunctional family may seem like a window into life on the fringes of society, but to anybody who is paying attention to recent events at all, it will be hard not to see in this a microcosm of the paranoia and corrosive hyperindividualism that characterizes US social relations more broadly...",
   },
   {
     title: 'Doppelganger',
@@ -43,7 +44,7 @@ const books: Book[] = [
     author: 'Naomi Klein',
     cover: 'https://covers.openlibrary.org/b/id/14377472-L.jpg',
     year: 2023,
-    description: 'Lorem ipsum.',
+    description: 'Description coming soon...',
   },
   {
     title: 'Road to Nowhere',
@@ -52,10 +53,43 @@ const books: Book[] = [
     cover:
       'https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Road_to_Nowhere_%282022_book%29.jpg/250px-Road_to_Nowhere_%282022_book%29.jpg',
     year: 2022,
-    description: 'Lorem ipsum.',
+    description: 'Description coming soon...',
+  },
+
+  {
+    title: 'Foundations of Economics',
+    subtitle: "A Beginner's Companion",
+    author: 'Yanis Varoufakis',
+    cover:
+      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348944275i/2018348.jpg',
+    year: 1998,
+    description: 'Description coming soon...',
+  },
+  {
+    title: 'Less Is More',
+    subtitle: 'How Degrowth Will Save the World',
+    author: 'Jason Hickel',
+    cover: 'https://covers.openlibrary.org/b/id/12439906-L.jpg',
+    year: 2021,
+    description: 'Description coming soon...',
+  },
+  {
+    title: 'This Is Vegan Propaganda',
+    subtitle: '(and Other Lies the Meat Industry Tells You)',
+    author: 'Ed Winters',
+    cover: 'https://covers.openlibrary.org/b/id/14233190-L.jpg',
+    year: 2022,
+    description: 'Description coming soon...',
+  },
+  {
+    title: 'The Myth of American Idealism',
+    subtitle: 'How U.S. Foreign Policy Endangers the World',
+    author: 'Noam Chomsky and Nathan J. Robinson',
+    cover: 'https://covers.openlibrary.org/b/id/14652612-L.jpg',
+    year: 2024,
+    description: 'Description coming soon...',
   },
 ]
-
 // TO DO: add filter/sort options
 
 const selectedBook = ref<Book | null>(null)
@@ -72,29 +106,64 @@ const openModal = (book: Book) => {
 
 <template>
   <div class="container my-4 text-center">
-    <div class="scroll-container d-flex overflow-auto justify-content-center">
+    <div class="d-flex justify-content-center">
       <div
-        v-for="(book, index) in books"
-        :key="index"
-        class="me-3 flex-shrink-0"
-        @click="openModal(book)"
-        style="cursor: pointer"
+        class="scroll-container d-flex justify-content-start"
+        style="
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding: 1rem 0;
+          height: 240px; /* enough for normal + scaled image */
+        "
       >
-        <img :src="book.cover" class="rounded shadow" style="height: 200px" :alt="book.title" />
+        <div
+          v-for="(book, index) in books"
+          :key="index"
+          class="me-3 flex-shrink-0"
+          @click="openModal(book)"
+          style="cursor: pointer"
+        >
+          <img :src="book.cover" class="rounded shadow" style="height: 200px" :alt="book.title" />
+        </div>
       </div>
     </div>
 
     <!-- Modal -->
     <div class="modal fade" ref="modal" tabindex="-1">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">{{ selectedBook?.title }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-          </div>
           <div class="modal-body">
-            <p><strong>Author:</strong> {{ selectedBook?.author }}</p>
-            <p>{{ selectedBook?.description }}</p>
+            <div class="row h-100">
+              <button
+                type="button"
+                class="btn-close position-absolute end-0 top-0 m-3"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <!-- Left: Book cover -->
+              <div class="col-md-4 d-flex align-items-center justify-content-center text-center">
+                <img
+                  :src="selectedBook?.cover"
+                  alt="Book cover"
+                  class="img-fluid rounded shadow-sm"
+                  style="max-height: 300px; object-fit: contain"
+                />
+              </div>
+
+              <!-- Right: Book info -->
+              <div class="col-md-8 d-flex flex-column justify-content-center">
+                <div>
+                  <h4>
+                    <strong>{{ selectedBook?.title }}</strong>
+                  </h4>
+                  <h5 v-if="selectedBook?.subtitle" class="text-muted">
+                    {{ selectedBook?.subtitle }}
+                  </h5>
+                </div>
+                <p class="mb-1">{{ selectedBook?.author }}, {{ selectedBook?.year }}</p>
+                <p class="text-start">{{ selectedBook?.description }}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -106,11 +175,11 @@ const openModal = (book: Book) => {
 .scroll-container img {
   transition: transform 0.3s ease;
   scrollbar-width: thin;
-  padding-bottom: 1rem;
+  padding-bottom: 0rem;
 }
 
 .scroll-container img:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   z-index: 1;
 }
 

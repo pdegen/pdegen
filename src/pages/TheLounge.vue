@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import ImageGallery from '@/components/ImageGallery.vue'
 import { animateBalls } from '@/assets/js/anims.ts'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import QuoteCycler from '@/components/QuoteCycler.vue'
+import BookRecs from '@/components/BookRecs.vue'
+import ImageGallery from '@/components/ImageGallery.vue'
 
 onMounted(() => {
   animateBalls({ amplitude: 40, speed: 1.5 })
@@ -34,6 +35,9 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#quotes">Quotes</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#books">Reading List</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
@@ -57,7 +61,7 @@ onMounted(() => {
         <div class="divider-custom-line"></div>
       </div>
       <!-- Masthead Subheading-->
-      <p class="masthead-subheading font-weight-light mb-0">More to come...</p>
+      <p class="masthead-subheading font-weight-light mb-0">Work in progress...</p>
       <!--<p class="masthead-subheading"><br><br>I use this space to play around with web dev stuff...</p>-->
     </div>
   </header>
@@ -75,6 +79,22 @@ onMounted(() => {
     </div>
 
     <QuoteCycler />
+  </section>
+
+  <!-- Books Section -->
+  <section class="page-section cv bg-light" id="books">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
+      Reading List
+    </h2>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <BookRecs />
   </section>
 
   <!-- Movie Section -->
