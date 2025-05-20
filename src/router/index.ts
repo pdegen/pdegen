@@ -1,5 +1,5 @@
 // src/router/index.js
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 import SandBox from '@/pages/SandBox.vue'
 import TheLounge from '@/pages/TheLounge.vue'
@@ -11,9 +11,16 @@ const routes = [
 ]
 
 export const router = createRouter({
-  history: createWebHashHistory('/pdegen/'), // use hash history because github pages doesn't support dynamic routes
+  //history: createWebHashHistory('/pdegen/'), // use hash history because github pages doesn't support dynamic routes
+  history: createWebHistory('/pdegen/'), // or use history mode with gh-pages 404.html hack: cp dist/index.html dist/404.html
   routes,
-  scrollBehavior() {
+  scrollBehavior(to) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
     return { top: 0 }
   },
 })
