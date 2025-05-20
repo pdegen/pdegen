@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import ImageGallery from '@/components/ImageGallery.vue'
+import BookRecs from '@/components/BookRecs.vue'
 import { animateBalls } from '@/assets/js/anims.ts'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 
@@ -128,22 +128,6 @@ onMounted(() => {
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section class="page-section cv bg-light" id="gallery">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Movie Guessing Game
-    </h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-film"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <ImageGallery />
-  </section>
-
   <!-- Books Section -->
   <section class="page-section cv bg-light" id="books">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
@@ -157,23 +141,7 @@ onMounted(() => {
       <div class="divider-custom-line"></div>
     </div>
 
-    <div class="text-center">Coming soon...</div>
-  </section>
-
-  <!-- Books Section -->
-  <section class="page-section cv bg-light" id="quotes">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Quote of the Day
-    </h2>
-
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="text-center">Coming soon...</div>
+    <BookRecs />
   </section>
 
   <!-- About Section-->
