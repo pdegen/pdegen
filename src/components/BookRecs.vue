@@ -17,6 +17,7 @@ type Book = {
   description: string
 }
 
+// To DO: read from md file
 const books = ref<Book[]>([
   {
     title: 'Merchants of Doubt',
@@ -27,7 +28,7 @@ const books = ref<Book[]>([
     year: 2010,
     category: BookCategory.NonFiction,
     description:
-      "If you're curious to learn how the US arrived at a place where <a target='_blank' rel='noopener noreferrer' href='https://climatecommunication.gmu.edu/all/climate-change-in-the-american-mind-beliefs-and-attitudes-fall-2024/'>a third of the population</a> is either unaware or outright denies the scientific consensus on anthropogenic climate change, this is the book the read. You may have heard before that <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/exxon-knew-about-climate-change-almost-40-years-ago/'>Exxon Mobile</a> was a key driver in obscuring their own research on climate change and spending millions to sow doubt about the science among the general public. But did you know that the same playbook was used time and again, from the ozone hole to acid rain to the environmental impact of DDT pesticides, often spearheaded by the same handful of former scientists turned industry shills? The authors trace a lineage of corporate-sponsored doubt-mongering that goes all the way back to the 1950s, when tobacco companies obscured the emerging scientific and medical consensus on the link between smoking and lung cancer. Crucially, the book shows how science denial is deeply intertwined with Cold War hysteria and free market ideology, funded by the private sector and conservative think tanks like The Heritage Foundation—yes, the one behind Project 2025 and <a target='_blank' rel='noopener noreferrer' href='https://forward.com/opinion/676036/antisemitism-heritage-foundation-project-esther/'>Project Esther</a>. Hard to think of an organization with a more damning track record for the future of humanity...",
+      "If you're curious to learn how the US arrived at a place where <a target='_blank' rel='noopener noreferrer' href='https://climatecommunication.gmu.edu/all/climate-change-in-the-american-mind-beliefs-and-attitudes-fall-2024/'>a third of the population</a> is either unaware or outright denies the scientific consensus on anthropogenic climate change, this is the book to read. You may have heard before that <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/exxon-knew-about-climate-change-almost-40-years-ago/'>Exxon Mobile</a> was a key driver in obscuring their own private research on climate change and spending millions to sow doubt about the science among the general public. But did you know that the same playbook was used time and again, from the ozone hole to acid rain to the environmental impact of DDT pesticides, often spearheaded by the same handful of former scientists turned industry shills? The authors trace a lineage of corporate-sponsored doubt-mongering that goes all the way back to the 1950s, when tobacco companies obscured the emerging scientific and medical consensus on the link between smoking and lung cancer. Crucially, the book shows how science denial is deeply intertwined with Cold War hysteria and free market ideology, funded by the private sector and conservative think tanks like The Heritage Foundation—yes, the one behind Project 2025 and <a target='_blank' rel='noopener noreferrer' href='https://forward.com/opinion/676036/antisemitism-heritage-foundation-project-esther/'>Project Esther</a>. Hard to think of an organization with a more damning track record for the future of humanity...",
   },
   {
     title: 'Doughnut Economics',
@@ -83,7 +84,8 @@ const books = ref<Book[]>([
     title: 'Less Is More',
     subtitle: 'How Degrowth Will Save the World',
     author: 'Jason Hickel',
-    cover: 'https://covers.openlibrary.org/b/id/12439906-L.jpg',
+    cover:
+      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1728516189i/53328332.jpg',
     year: 2021,
     category: BookCategory.NonFiction,
     description: 'Description coming soon...',
@@ -95,7 +97,8 @@ const books = ref<Book[]>([
     cover: 'https://covers.openlibrary.org/b/id/14233190-L.jpg',
     year: 2022,
     category: BookCategory.NonFiction,
-    description: 'Description coming soon...',
+    description:
+      "A comprehensive overview making the case for (you guessed it) veganism. Covers most of the important topics: ethics and animal welfare, environment and climate, nutrition and health, and countering the prevailing narrative. Winters also runs a successful YouTube channel under the name <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/@ed.winters/videos'>Earthling Ed</a>, featuring a mix of commentary videos and debates where he (amicably, instructively) runs circles around his interlocutors. His <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=Z3u7hXpOm58'>university speech</a> can be used as an excellent introduction to veganism.",
   },
   {
     title: 'The Myth of American Idealism',
@@ -200,7 +203,7 @@ const filteredBooks = computed(() =>
 
 <template>
   <div class="container my-4 text-center">
-    Are you looking for your next read? I got you covered.
+    Looking for your next read? I got you covered.
     <br />
     <div class="my-3 d-flex justify-content-center align-items-center gap-2">
       <span>Non-Fiction</span>
@@ -216,22 +219,29 @@ const filteredBooks = computed(() =>
         style="
           overflow-x: auto;
           overflow-y: hidden;
-          padding: 1rem 0;
-          height: 240px; /* enough for normal + scaled image */
+          padding: 2rem 0;
+          height: 260px; /* enough for normal + scaled image */
         "
       >
+        <!--Don't use index in v-for here; use unique index like book.title or vue doesn't update sticky note due to DOM element recycling-->
         <div
-          v-for="(book, index) in filteredBooks"
-          :key="index"
+          v-for="book in filteredBooks"
+          :key="book.title"
           class="me-3 flex-shrink-0"
           @click="openModal(book)"
           style="cursor: pointer"
         >
-          <img :src="book.cover" class="rounded shadow" style="height: 200px" :alt="book.title" />
+          <div class="img-note position-relative">
+            <img :src="book.cover" class="rounded shadow" style="height: 200px" :alt="book.title" />
+            <i
+              v-if="book.description?.length > 30"
+              class="fa-solid fa-note-sticky position-absolute"
+              style="top: -8px; right: -8px; font-size: 1.6rem; color: darkgrey"
+            ></i>
+          </div>
         </div>
       </div>
     </div>
-
     <!-- Modal -->
     <div class="modal fade" ref="modal" tabindex="-1">
       <div class="modal-dialog modal-lg">
@@ -277,13 +287,13 @@ const filteredBooks = computed(() =>
 </template>
 
 <style scoped>
-.scroll-container img {
+.scroll-container .img-note {
   transition: transform 0.3s ease;
   scrollbar-width: thin;
   padding-bottom: 0rem;
 }
 
-.scroll-container img:hover {
+.scroll-container .img-note:hover {
   transform: scale(1.15);
   z-index: 1;
 }
