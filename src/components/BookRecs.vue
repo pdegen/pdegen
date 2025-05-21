@@ -19,7 +19,8 @@ const books: Book[] = [
     author: 'Naomi Oreskes and Erik M. Conway',
     cover: 'https://covers.openlibrary.org/b/id/7909667-L.jpg',
     year: 2010,
-    description: 'Description Description coming soon...',
+    description:
+      "If you're curious to learn how the US arrived at a place where <a target='_blank' rel='noopener noreferrer' href='https://climatecommunication.gmu.edu/all/climate-change-in-the-american-mind-beliefs-and-attitudes-fall-2024/'>a third of the population</a> is either unaware or outright denies the scientific consensus on anthropogenic climate change, this is the book the read. You may have heard before that <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/exxon-knew-about-climate-change-almost-40-years-ago/'>Exxon Mobile</a> was a key driver in obscuring their own research on climate change and spending millions to sow doubt about the science among the general public. But did you know that the same playbook was used time and again, from the ozone hole to acid rain to the environmental impact of DDT pesticides, often spearheaded by the same handful of former scientists turned industry shills? The authors trace a lineage of corporate-sponsored doubt-mongering that goes all the way back to the 1950s, when tobacco companies obscured the emerging scientific and medical consensus on the link between smoking and lung cancer. Crucially, the book shows how science denial is deeply intertwined with Cold War hysteria and free market ideology, funded by the private sector and conservative think tanks like The Heritage Foundation—yes, the one behind Project 2025 and <a target='_blank' rel='noopener noreferrer' href='https://forward.com/opinion/676036/antisemitism-heritage-foundation-project-esther/'>Project Esther</a>. Hard to think of an organization with a more damning track record for the future of humanity...",
   },
   {
     title: 'Doughnut Economics',
@@ -40,11 +41,12 @@ const books: Book[] = [
   },
   {
     title: 'Doppelganger',
-    subtitle: 'Doppelganger: A Trip into the Mirror World',
+    subtitle: 'A Trip into the Mirror World',
     author: 'Naomi Klein',
     cover: 'https://covers.openlibrary.org/b/id/14377472-L.jpg',
     year: 2023,
-    description: 'Description coming soon...',
+    description:
+      "Brilliant memoir and insightful analysis of the resurgence of the far-right in the West. Of particular importance is the way that far-right politics co-opts leftist talking points and twists them to serve reactionary ends. Sadly, this is not a new story: divide and conquer is the oldest trick in the oligarch's playbook, promising minor economic concessions to the in-group while taking advantage of rising far-right sentiments to keep regular people in a constant state of manufactured hysteria about 'the Other'. What is new, however, is the way that social media has completely turbo-charged the spread of misinformation and the powerful allure of conspiracy theories, making it easier than ever to divert working-class resentment towards the latest scapegoat du jour. For a discussion of the book, see also <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=FxQ3EuEAOz0'>Ash Sarkar's interview with Naomi Klein</a> for Novara Media. Another crucial read is Klein's follow-up essay <a target='_blank' rel='noopener noreferrer' href='https://www.theguardian.com/us-news/ng-interactive/2025/apr/13/end-times-fascism-far-right-trump-musk'>The Rise of End Times Fascism</a>, co-written with Astra Taylor for The Guardian.",
   },
   {
     title: 'Road to Nowhere',
@@ -153,15 +155,16 @@ const openModal = (book: Book) => {
               <!-- Right: Book info -->
               <div class="col-md-8 d-flex flex-column justify-content-center">
                 <div>
-                  <h4>
+                  <h4 class="text-start">
                     <strong>{{ selectedBook?.title }}</strong>
                   </h4>
-                  <h5 v-if="selectedBook?.subtitle" class="text-muted">
+                  <h5 v-if="selectedBook?.subtitle" class="text-muted text-start">
                     {{ selectedBook?.subtitle }}
                   </h5>
                 </div>
-                <p class="mb-1">{{ selectedBook?.author }}, {{ selectedBook?.year }}</p>
-                <p class="text-start">{{ selectedBook?.description }}</p>
+                <p class="mb-1 text-start">{{ selectedBook?.author }}, {{ selectedBook?.year }}</p>
+                <hr />
+                <p class="text-start" v-html="selectedBook?.description"></p>
               </div>
             </div>
           </div>
