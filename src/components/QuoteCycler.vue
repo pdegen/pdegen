@@ -7,6 +7,7 @@ type QuoteType = {
   quote: string
   author: string
   work?: string
+  noquotemarks?: boolean
 }
 
 // must have header with QuoteType col names
@@ -18,8 +19,12 @@ function parseCSV(): QuoteType[] {
 
   return parsed.data
 }
+
+const testQuote = false
 function getNextQuote(quotes: QuoteType[]): QuoteType {
-  //const quote = quotes[quotes.length - 1]
+  if (testQuote) {
+    return quotes[quotes.length - 1]
+  }
 
   // random quote
   // const quote = quotes[Math.floor(Math.random() * quotes.length)]
@@ -45,15 +50,23 @@ const quote = ref<QuoteType>(getNextQuote(shuffled))
 </script>
 
 <template>
+  <div class="container d-flex justify-content-center">
+    <div class="quote text-start p-2">
+      <h4
+        class="fw-normal"
+        v-html="
+          `${!quote.noquotemarks ? '&ldquo;' : ''}${quote.quote.replace(/\n/g, '<br>')}${!quote.noquotemarks ? '&rdquo;' : ''}`
+        "
+      ></h4>
+      <h5 class="fw-normal">
+        —{{ quote.author
+        }}<span v-if="quote.work"
+          >, <i><span v-html="quote.work"></span></i>
+        </span>
+      </h5>
+    </div>
+  </div>
   <div class="container text-center">
-    <h4 class="fw-normal" v-html="`&ldquo;${quote.quote.replace(/\n/g, '<br>')}&rdquo;`"></h4>
-    <h5 class="fw-normal">
-      —{{ quote.author
-      }}<span v-if="quote.work"
-        >, <i>{{ quote.work }}</i></span
-      >
-    </h5>
-    <br />
     <button type="button" class="btn btn-primary btn-lg" @click="quote = getNextQuote(quotes)">
       Re-roll
     </button>
@@ -61,7 +74,7 @@ const quote = ref<QuoteType>(getNextQuote(shuffled))
 </template>
 
 <style scoped>
-.quote-of-the-day {
+.quote {
   font-family: serif;
   background: #f9f9f9;
   border-left: 4px solid #ccc;

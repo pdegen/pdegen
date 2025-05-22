@@ -1,4 +1,4 @@
-quote,author,work
+quote,author,work,noquotemarks
 "The defeatist belief that all pursuits arise from a selfish core in all humanity denies the deeper motives that also activate people: love, creativity, spiritual quest, the drive for mastery and autonomy, the impulse to make a contribution.",Gabor Maté,In the Realm of Hungry Ghosts: Close Encounters with Addiction
 "The most important assumptions of a model are not in the equations, but what’s not in them; not in the documentation, but unstated; not in the variables on the computer screen, but in the blank spaces around them.",Kate Raworth,Doughnut Economics: Seven Ways to Think Like a 21st Century Economist
 "Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny. Whatever affects one directly, affects all indirectly.",Martin Luther King Jr., Letter from Birmingham Jail
@@ -9,7 +9,7 @@ quote,author,work
 "Zombie no go go, unless you tell 'em to go (zombie)
 Zombie no go stop, unless you tell 'em to stop (zombie)
 Zombie no go turn, unless you tell 'em to turn (zombie)
-Zombie no go think, unless you tell 'em to think (zombie)",Fela Anikulapo Kuti and Afrika 70,Zombie
+Zombie no go think, unless you tell 'em to think (zombie)",Fela Anikulapo Kuti and Afrika 70,Zombie,true
 "I would like to make a film to tell children it's good to be alive.",Hayao Miyazaki,
 "Now you listen to me. While I will admit to a certain cynicism, the fact is that I am a naysayer and hatchetman in the fight against violence. I pride myself in taking a punch and I'll gladly take another because I choose to live my life in the company of Gandhi and King. My concerns are global. I reject absolutely revenge, aggression, and retaliation. The foundation of such a method... is love. I love you Sheriff Truman.",Albert Rosenfield,Twin Peaks
 "I know kung fu.",Neo,The Matrix
@@ -18,3 +18,6 @@ Zombie no go think, unless you tell 'em to think (zombie)",Fela Anikulapo Kuti a
 "Paul Dirac was notoriously a man of few words. Dick Feynman told the story that when he first met Dirac at a conference, Dirac said after a long silence, 'I have an equation; do you have one too?'",Anthony Zee,Quantum Field Theory in a Nutshell
 "But the truth is that nothing of much consequence in the face of our rigged systems can be accomplished on our own—whether by our own small selves or even by our own identity groups. Change requires collaboration and coalition, even (especially) uncomfortable coalition. Mariame Kaba, a longtime prison abolitionist who has done as much as anyone to imagine what it would take to live in a world that does not equate safety with police and cages, puts the lesson succinctly, one passed on to her by her father: 'Everything worthwhile is done with other people.'",Naomi Klein, Doppelganger
 "And not surprisingly, for if science is about studying the world as it actually is—rather than as we wish it to be—then science will always have the potential to unsettle the status quo. As an independent source of authority and knowledge, science has always had the capacity to challenge ruling powers’ ability to control people by controlling their beliefs. Indeed, it has the power to challenge anyone who wishes to preserve, protect, or defend the status quo.",Naomi Oreskes and Erik M. Conway,Merchants of Doubt
+"The thing about points of no return, the reason we worry over them so much, is it's rare to know where they are until they are some ways behind you.",Ian Danskin,<a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=0YFdwfNh5vs'>The South Bank of the Rubicon</a>
+"DOCTOR: you cant keep doing this to yourself. being The Last True Good Boy online will destroy you. you must stop posting with honor
+ME: No, ",dril,,true

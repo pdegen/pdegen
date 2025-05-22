@@ -236,7 +236,7 @@ const filteredBooks = computed(() =>
             <i
               v-if="book.description?.length > 30"
               class="fa-solid fa-note-sticky position-absolute"
-              style="top: -8px; right: -8px; font-size: 1.6rem; color: darkgrey"
+              style="top: -8px; right: -8px; font-size: 1.6rem; color: silver"
             ></i>
           </div>
         </div>
