@@ -380,6 +380,7 @@ const checkAnswer = (userGuess: string, correctAnswer: string) => {
 const endGame = () => {
   selectedImages.value = shuffled
   gameEnded.value = true
+  revealAnswer.value = true
 }
 
 const openModal = (img: image_modal) => {

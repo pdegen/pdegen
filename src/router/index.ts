@@ -3,11 +3,12 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '@/pages/HomePage.vue'
 import SandBox from '@/pages/SandBox.vue'
 import TheLounge from '@/pages/TheLounge.vue'
+import { routesMeta } from '@/router/routesMeta.ts'
 
 const routes = [
-  { path: '/', name: 'HomePage', component: HomePage },
-  { path: '/sandbox', name: 'SandBox', component: SandBox },
-  { path: '/lounge', name: 'Lounge', component: TheLounge },
+  { ...routesMeta[0], component: HomePage },
+  { ...routesMeta[1], component: SandBox },
+  { ...routesMeta[2], component: TheLounge },
 ]
 
 export const router = createRouter({

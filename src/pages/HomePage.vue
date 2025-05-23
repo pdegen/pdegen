@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { navbarHandler, progressbarHandler } from '@/assets/js/scripts.ts'
+import Navigation from '@/components/TheNavigation.vue'
 
 onMounted(() => {
   requestAnimationFrame(() => {
@@ -347,16 +348,9 @@ const isDev = import.meta.env.MODE === 'development'
     </div>
   </section>
 
-  <!-- About Section-->
-  <section
-    class="page-section text-white mb-0"
-    id="about"
-    style="padding-bottom: 2rem; background-color: #15967d"
-  >
-    <div class="container text-center">
-      Want to know more? Visit...
-      <router-link to="/lounge" class="text-white"><h3>The Lounge</h3></router-link>
-    </div>
+  <!-- Navigation Section-->
+  <section class="page-section text-white mb-0" style="padding: 2rem; background-color: #15967d">
+    <Navigation />
   </section>
 
   <!-- Footer-->

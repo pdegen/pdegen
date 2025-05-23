@@ -5,10 +5,26 @@ import { navbarHandler } from '@/assets/js/scripts.ts'
 import QuoteCycler from '@/components/QuoteCycler.vue'
 import BookRecs from '@/components/BookRecs.vue'
 import ImageGallery from '@/components/ImageGallery.vue'
+import Navigation from '@/components/TheNavigation.vue'
 
 onMounted(() => {
   animateBalls({ amplitude: 40, speed: 1.5 })
   navbarHandler()
+
+  const script = document.createElement('script')
+  script.src = 'https://player.vimeo.com/api/player.js'
+  script.type = 'text/javascript'
+  script.async = true
+  document.head.appendChild(script)
+
+  script.onload = () => {
+    console.log('External script loaded successfully!')
+    // You can use the functions/objects defined in the external script here.
+  }
+
+  script.onerror = (error) => {
+    console.error('Error loading external script:', error)
+  }
 })
 </script>
 
@@ -41,7 +57,7 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#activism">Activism</a>
           </li>
         </ul>
       </div>
@@ -112,24 +128,48 @@ onMounted(() => {
     <ImageGallery />
   </section>
 
-  <!-- About Section-->
-  <section class="page-section bg-primary text-white mb-0" id="about" style="padding-bottom: 4rem">
-    <div class="container">
-      <!-- About Section Heading-->
-      <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-      <!-- Icon Divider-->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-        <div class="divider-custom-line"></div>
-      </div>
-      <!-- About Section Content-->
-      <div class="row">
-        <div class="col-lg-12 ms-auto">
-          <p class="lead text-center">You've reached the end!</p>
-        </div>
-      </div>
+  <!-- Activism Section -->
+  <section class="page-section cv bg-light" id="activism">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Activism</h2>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-bullhorn"></i></div>
+      <div class="divider-custom-line"></div>
     </div>
+
+    <div class="container text-center">
+      Greetings from the General Assembly 2025 of Amnesty International's Swiss Section :D
+      <br />
+      <br />
+
+      <div style="padding: 25% 0 0 0; position: relative">
+        <iframe
+          src="https://player.vimeo.com/video/1085941675?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+          title="Generalversammlung 2025"
+        ></iframe>
+      </div>
+      <br />
+      Free to dance... free to protest!
+      <br />
+      Sign the
+      <a
+        href="https://action.amnesty.ch/de/amnesty-international-petition-demonstrationsfreiheit-garantieren/?utm_source=amnesty.ch&utm_medium=referral&utm_campaign=demonstrationsfreiheit&utm_term=&utm_content=petition"
+        target="_blank"
+        rel="noopener noreferrer"
+        >petition</a
+      >
+      (de / fr) to support Amnesty's ongoing campaign to #ProtectTheProtest
+    </div>
+  </section>
+
+  <!-- Navigation Section-->
+  <section class="page-section bg-primary text-white mb-0" id="navigation" style="padding: 2rem">
+    <Navigation />
   </section>
 
   <!-- Footer-->
