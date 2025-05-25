@@ -2,6 +2,7 @@
 export const routesMeta = [
   { path: '/', name: 'Home' },
   { path: '/sandbox', name: 'Sandbox' },
+  { path: '/advocacy', name: 'Advocacy' },
   { path: '/lounge', name: 'Lounge' },
 ]
 

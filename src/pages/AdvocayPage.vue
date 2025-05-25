@@ -1,14 +1,9 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { animateBalls } from '@/assets/js/anims.ts'
 import { navbarHandler } from '@/assets/js/scripts.ts'
-import QuoteCycler from '@/components/QuoteCycler.vue'
-import BookRecs from '@/components/BookRecs.vue'
-import ImageGallery from '@/components/ImageGallery.vue'
 import Navigation from '@/components/TheNavigation.vue'
 
 onMounted(() => {
-  animateBalls({ amplitude: 40, speed: 1.5 })
   navbarHandler()
 
   const script = document.createElement('script')
@@ -48,13 +43,10 @@ onMounted(() => {
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#quotes">Quotes</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#open">Open Science</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#books">Reading List</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty</a>
           </li>
         </ul>
       </div>
@@ -66,7 +58,7 @@ onMounted(() => {
       <!-- Masthead Avatar Image-->
       <!-- <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /> -->
       <!-- Masthead Heading-->
-      <h1 class="masthead-heading text-uppercase mb-0">The Lounge</h1>
+      <h1 class="masthead-heading text-uppercase mb-0">Advocacy and Engagement</h1>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -79,50 +71,60 @@ onMounted(() => {
     </div>
   </header>
 
-  <!-- Quotes Section -->
-  <section class="page-section cv bg-light" id="quotes">
+  <!-- Amnesty Section -->
+  <section class="page-section cv bg-light" id="amnesty">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Random Quote
+      Open Science
     </h2>
     <!-- Icon Divider-->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-microscope"></i></div>
       <div class="divider-custom-line"></div>
     </div>
 
-    <QuoteCycler />
+    <div class="container text-center">Coming soon...</div>
   </section>
 
-  <!-- Books Section -->
-  <section class="page-section cv bg-light" id="books">
+  <!-- Amnesty Section -->
+  <section class="page-section cv bg-light" id="amnesty">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Reading List
-    </h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-book"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <BookRecs />
-  </section>
-
-  <!-- Movie Section -->
-  <section class="page-section cv bg-light" id="gallery">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Movie Guessing Game
+      Amnesty Inernational
     </h2>
 
     <!-- Icon Divider-->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-film"></i></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-bullhorn"></i></div>
       <div class="divider-custom-line"></div>
     </div>
 
-    <ImageGallery />
+    <div class="container text-center">
+      Greetings from the General Assembly 2025 of Amnesty International's Swiss Section :D
+      <br />
+      <br />
+
+      <div style="padding: 25% 0 0 0; position: relative">
+        <iframe
+          src="https://player.vimeo.com/video/1085941675?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+          title="Generalversammlung 2025"
+        ></iframe>
+      </div>
+      <br />
+      Free to dance... free to protest!
+      <br />
+      Sign the
+      <a
+        href="https://action.amnesty.ch/de/amnesty-international-petition-demonstrationsfreiheit-garantieren/?utm_source=amnesty.ch&utm_medium=referral&utm_campaign=demonstrationsfreiheit&utm_term=&utm_content=petition"
+        target="_blank"
+        rel="noopener noreferrer"
+        >petition</a
+      >
+      (de / fr) to support Amnesty's ongoing campaign to #ProtectTheProtest
+    </div>
   </section>
 
   <!-- Navigation Section-->
