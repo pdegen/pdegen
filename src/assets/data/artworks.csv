@@ -1,6 +1,15 @@
-src,artist,title,year
-https://johndyergallery.com/cdn/shop/files/african-nights-amboseli-maasai-painting-john-dyer-kenya_c0e072d2-164e-4dc6-a74d-88a86508a22c_2048x.jpg,John Dyer,"African Nights, Amboseli, Kenya"
-https://johndyergallery.com/cdn/shop/products/2394_2048x.jpg,John Dyer,Rare - Spiritual Rebirth
-https://johndyergallery.com/cdn/shop/products/john-dyer-painting-new-york-central-park-cycling-bikes_2048x.jpg?v=1669581648,John Dyer,"Cycling around Central Park, New York"
-https://upload.wikimedia.org/wikipedia/commons/5/52/Edvard_Munch_-_The_Sick_Child_-_MM.M.00052_-_Munch_Museum.jpg,Edvard Munch,The Sick Child,1927
-https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Arnold_B%C3%B6cklin_-_Die_Toteninsel_V_%28Museum_der_bildenden_K%C3%BCnste_Leipzig%29.jpg/1920px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_V_%28Museum_der_bildenden_K%C3%BCnste_Leipzig%29.jpg,Arnold Bröcklin,Isle of the Dead,1886
+src,title,artist,year
+https://johndyergallery.com/cdn/shop/files/african-nights-amboseli-maasai-painting-john-dyer-kenya_c0e072d2-164e-4dc6-a74d-88a86508a22c_2048x.jpg,"African Nights, Amboseli, Kenya",John Dyer
+https://johndyergallery.com/cdn/shop/products/2394_2048x.jpg,Rare - Spiritual Rebirth,John Dyer
+https://johndyergallery.com/cdn/shop/products/john-dyer-painting-new-york-central-park-cycling-bikes_2048x.jpg?v=1669581648,"Cycling around Central Park, New York",John Dyer
+https://upload.wikimedia.org/wikipedia/commons/5/52/Edvard_Munch_-_The_Sick_Child_-_MM.M.00052_-_Munch_Museum.jpg,The Sick Child,Edvard Munch,1927
+https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Arnold_B%C3%B6cklin_-_Die_Toteninsel_V_%28Museum_der_bildenden_K%C3%BCnste_Leipzig%29.jpg/1920px-Arnold_B%C3%B6cklin_-_Die_Toteninsel_V_%28Museum_der_bildenden_K%C3%BCnste_Leipzig%29.jpg,Isle of the Dead,Arnold Bröcklin,1886
+https://image.invaluable.com/housePhotos/abell/88/746788/H0068-L330149544_original.JPG,Woman Gazing at the Sea,George Henry Boughton,1833-1905
+https://i.etsystatic.com/9932839/r/il/1b2172/3791118671/il_1140xN.3791118671_zvwd.jpg,Autumn on the Shore of the Lake,Leopold Franz Kowalski,1856–1931
+https://upload.wikimedia.org/wikipedia/commons/b/b2/Edvard_Munch_-_Red_and_White_-_Google_Art_Project.jpg,Red and White,Edvard Munch,1899
+https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/La_le%C3%A7on_de_piano.jpg/800px-La_le%C3%A7on_de_piano.jpg,La leçon de piano,Marcel Rieder,1862-1942
+https://upload.wikimedia.org/wikipedia/commons/f/f7/L%27argenterie.jpg,L'argenterie,Marcel Rieder,1862-1942
+https://upload.wikimedia.org/wikipedia/commons/f/fc/Songeuse_devant_la_chemin%C3%A9e.jpg,Jeune femme songeuse,Marcel Rieder,1862-1942
+https://upload.wikimedia.org/wikipedia/commons/9/91/Charles_Courtney_Curran_-_Lotus_Lilies.jpg,Lotus Lilies,Charles Courtney Curran,1888
+https://upload.wikimedia.org/wikipedia/commons/b/ba/Charles_Courtney_Curran_-_Paris_la_nuit_%281889%29.jpg,Paris at night,Charles Courtney Curran,1889
+https://upload.wikimedia.org/wikipedia/commons/5/50/Artemisia_Gentileschi_-_Giuditta_decapita_Oloferne_-_Google_Art_Project-Adjust.jpg,Judith Slaying Holofernes,Artemisia Gentileschi,1620

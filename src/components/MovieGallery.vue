@@ -48,7 +48,7 @@
       <button type="button" class="btn btn-primary" @click="replay()">Play Again</button>
     </div>
     <div class="d-flex justify-content-center" v-else>
-      <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-6 col-lg-6">
+      <div v-for="(img, index) in selectedImages" :key="index" class="col-12 col-md-6">
         <div class="gallery-item position-relative" @click="openModal(img)">
           <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
           <div class="overlay">

@@ -4,7 +4,7 @@ import * as bootstrap from 'bootstrap'
 import { parseCSV } from '@/assets/js/scripts'
 import artworksCSV from '@/assets/data/artworks.csv?raw'
 
-// TO DO: prev/next buttons on image
+// TO DO: filter artworks by year, mood
 
 type Artwork = {
   src: string
@@ -14,6 +14,7 @@ type Artwork = {
 }
 
 const artworks = parseCSV<Artwork>(artworksCSV)
+debugger
 const shuffled = [...artworks].sort(() => 0.5 - Math.random())
 
 // Reactive selected images
@@ -21,8 +22,12 @@ const modalData = ref<Artwork>(artworks[0])
 const modal = ref(null)
 let currentIndex: number = 0
 
-const openModal = (work: Artwork) => {
+const reloadModal = (work: Artwork) => {
   modalData.value = work
+}
+
+const openModal = (work: Artwork) => {
+  reloadModal(work)
 
   if (modal.value) {
     const bsModal = new bootstrap.Modal(modal.value)
@@ -30,9 +35,15 @@ const openModal = (work: Artwork) => {
   }
 }
 
-const advanceQueue = () => {
-  currentIndex = currentIndex + 1 == shuffled.length ? 0 : currentIndex + 1
+const advanceQueue = (reversed: boolean = false) => {
+  debugger
+  if (reversed) {
+    currentIndex = currentIndex - 1 < 0 ? shuffled.length : currentIndex - 1
+  } else {
+    currentIndex = currentIndex + 1 == shuffled.length ? 0 : currentIndex + 1
+  }
   selectedWork.value = shuffled[currentIndex]
+  reloadModal(selectedWork.value)
 }
 // Initialize selection
 const selectedWork = ref<Artwork>(shuffled[currentIndex])
@@ -41,27 +52,34 @@ const selectedWork = ref<Artwork>(shuffled[currentIndex])
 <template>
   <div class="container">
     <div class="text-center">
-      <p>Art tingles my brain.</p>
+      <p>Art tickles my brain.</p>
     </div>
-    <div class="justify-content-center d-flex">
-      <div class="gallery-item position-relative col-6" @click="openModal(selectedWork)">
+    <div class="justify-content-center align-items-center d-flex">
+      <div
+        class="gallery-item position-relative col-12 col-md-6 d-flex justify-content-center align-items-center"
+        style="height: 400px; overflow: hidden"
+        @click="openModal(selectedWork)"
+      >
         <img
           :src="selectedWork.src"
           :alt="selectedWork.title"
           class="img-fluid rounded gallery-img"
+          style="max-height: 100%; max-width: 100%; object-fit: contain"
         />
-        <div class="overlay">
-          <div>
-            <p class="text-white">{{ selectedWork.title }}</p>
-          </div>
-        </div>
       </div>
     </div>
     <br />
-    <div class="text-center">
-      <button type="button" class="btn btn-primary btn-lg" @click="advanceQueue()">
-        Next Artwork
-      </button>
+    <div class="row justify-content-center gap-4">
+      <div class="col-5 col-md-3">
+        <button type="button" class="btn btn-primary btn-lg w-100" @click="advanceQueue(true)">
+          Previous
+        </button>
+      </div>
+      <div class="col-5 col-md-3">
+        <button type="button" class="btn btn-primary btn-lg w-100" @click="advanceQueue()">
+          Next
+        </button>
+      </div>
     </div>
   </div>
 
@@ -79,8 +97,27 @@ const selectedWork = ref<Artwork>(shuffled[currentIndex])
         </div>
         <div class="modal-body text-center">
           <img :src="modalData.src" class="img-fluid rounded mb-3" :alt="modalData.title" />
-          <h5>{{ modalData.title || 'Unknown title' }}</h5>
-          <p>{{ modalData.artist || 'Unknown artist' }}, {{ modalData.year || 'unknown year' }}</p>
+
+          <div class="row justify-content-center align-items-center">
+            <div class="col-1">
+              <button type="button" class="btn btn-primary" @click="advanceQueue(true)">
+                <i class="fa-solid fa-arrow-left"></i>
+              </button>
+            </div>
+
+            <div class="col-9">
+              <h5>{{ modalData.title || 'Unknown title' }}</h5>
+              <p>
+                {{ modalData.artist || 'Unknown artist'
+                }}{{ modalData.year ? ', ' + modalData.year : '' }}
+              </p>
+            </div>
+            <div class="col-1">
+              <button type="button" class="btn btn-primary" @click="advanceQueue()">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
