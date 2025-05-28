@@ -6,6 +6,7 @@ import QuoteCycler from '@/components/QuoteCycler.vue'
 import BookRecs from '@/components/BookRecs.vue'
 import ImageGallery from '@/components/ImageGallery.vue'
 import Navigation from '@/components/TheNavigation.vue'
+import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
 onMounted(() => {
   animateBalls({ amplitude: 40, speed: 1.5 })
@@ -55,6 +56,9 @@ onMounted(() => {
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <NavigationDropdown />
           </li>
         </ul>
       </div>

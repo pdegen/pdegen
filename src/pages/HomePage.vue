@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { navbarHandler, progressbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
+import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 import PortFolio from '@/components/PortFolio.vue'
 
 onMounted(() => {
@@ -47,6 +48,9 @@ const isDev = import.meta.env.MODE === 'development'
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <NavigationDropdown />
           </li>
         </ul>
       </div>
@@ -307,7 +311,11 @@ const isDev = import.meta.env.MODE === 'development'
   </section>
 
   <!-- Navigation Section-->
-  <section class="page-section text-white mb-0" style="padding: 2rem; background-color: #15967d">
+  <section
+    class="page-section text-white mb-0"
+    style="padding: 2rem; background-color: #15967d"
+    id="more"
+  >
     <Navigation />
   </section>
 

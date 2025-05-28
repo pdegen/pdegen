@@ -13,12 +13,25 @@ import { routesMetaFiltered } from '@/router/routesMeta.ts'
     </div> -->
     <!-- Navigation Section Content-->
     <div class="text-center">
-      <h3>
+      <h3
+        :class="[
+          'd-flex',
+          'justify-content-center',
+          'align-items-center',
+          'flex-md-row',
+          'flex-column',
+          'gap-2',
+        ]"
+      >
         <template v-for="(route, index) in routesMetaFiltered" :key="route.path">
-          <router-link :to="route.path" class="text-white">
-            {{ route.name }}
-          </router-link>
-          <span v-if="index < routesMetaFiltered.length - 1"> | </span>
+          <div class="d-flex align-items-center">
+            <router-link :to="route.path" class="text-white">
+              {{ route.name }}
+            </router-link>
+            <span v-if="index < routesMetaFiltered.length - 1" class="mx-2 d-none d-md-inline"
+              >|</span
+            >
+          </div>
         </template>
       </h3>
     </div>

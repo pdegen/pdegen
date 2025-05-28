@@ -21,7 +21,7 @@ const portfolioItems = ref<PortfolioItem[]>([
     title: 'Quote Browser',
     cover: img_quote,
     description:
-      "One reason why I like to read e-books is that I can easily highlight noteworthy passages and quickly retrieve them across my entire digital library. At time of writing, I have close to 5'000 highlights (aka clippings) saved on my Kindle, which I frequently consult whenever I'm writing or thinking about a related topic. However, these clippings are stored in a plain text file, which is unwieldy to navigate. Therefore, I made a simple web page that lets users upload their clippings for improved browsing, sorting, filtering, and sharing. Available via <a href='https://github.com/pdegen/QuoteBrowser' target='_blank' rel='noopener noreferrer'>GitHub.</a>",
+      "One reason why I like to read e-books is that I can easily highlight noteworthy passages and quickly retrieve them across my entire digital library. At time of writing, I have close to 5'000 highlights (aka clippings) saved on my Kindle, which I frequently consult whenever I'm writing or thinking about a related topic. However, these clippings are stored in a plain text file, which is unwieldy to navigate. Therefore, I made a simple web page that lets users upload their clippings for improved browsing, sorting, filtering, and sharing. Available <a href='https://pdegen.github.io/QuoteBrowser/' target='_blank' rel='noopener noreferrer'>here.</a>",
   },
 ])
 

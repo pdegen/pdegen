@@ -2,6 +2,9 @@
 import { onMounted } from 'vue'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
+import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
+
+import img_swissrn from '@/assets/img/swissrn-logo.png'
 
 onMounted(() => {
   navbarHandler()
@@ -46,7 +49,10 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#open">Open Science</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty International</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <NavigationDropdown />
           </li>
         </ul>
       </div>
@@ -58,7 +64,7 @@ onMounted(() => {
       <!-- Masthead Avatar Image-->
       <!-- <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /> -->
       <!-- Masthead Heading-->
-      <h1 class="masthead-heading text-uppercase mb-0">Advocacy and Engagement</h1>
+      <h1 class="masthead-heading text-uppercase mb-0">Advocacy</h1>
       <!-- Icon Divider-->
       <div class="divider-custom divider-light">
         <div class="divider-custom-line"></div>
@@ -83,7 +89,44 @@ onMounted(() => {
       <div class="divider-custom-line"></div>
     </div>
 
-    <div class="container text-center">Coming soon...</div>
+    <div class="container text-center">
+      <h3 class="bs-primary">Swiss Reproducibility Network</h3>
+
+      <img
+        class="img-fluid"
+        :src="img_swissrn"
+        alt="Swiss RN Logo"
+        style="width: 30%; margin: 1rem"
+      />
+
+      <p>
+        Are you an early-career researcher based in Switzerland and interested in open science and
+        reproducibility? Do you want to gain organizing experience and network with a group of
+        likeminded individuals? Consider joinging the
+        <a
+          href="https://www.swissrn.org/contents/academy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Swiss Reproducibility Network Academy</a
+        >!
+      </p>
+
+      <h3 class="bs-primary">Resources</h3>
+
+      <div>
+        <a href="https://book.the-turing-way.org/" target="_blank" rel="noopener noreferrer"
+          >The Turing Way</a
+        >
+      </div>
+      <div>
+        <a
+          href="https://www.crs.uzh.ch/en/resources/CRS-Primers.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          >CRS Primers</a
+        >
+      </div>
+    </div>
   </section>
 
   <!-- Amnesty Section -->
