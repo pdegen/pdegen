@@ -48,7 +48,7 @@
       <button type="button" class="btn btn-primary" @click="replay()">Play Again</button>
     </div>
     <div class="d-flex justify-content-center" v-else>
-      <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+      <div v-for="(img, index) in selectedImages" :key="index" class="col-sm-6 col-md-6 col-lg-6">
         <div class="gallery-item position-relative" @click="openModal(img)">
           <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
           <div class="overlay">
@@ -69,7 +69,7 @@
             :disabled="submittedWrongGuessAgain"
           />
         </form>
-        <p v-if="!submittedWrongGuessAgain" class="text-center">Hit enter to submit.</p>
+        <p v-if="!submittedWrongGuessAgain" class="text-center mt-2">Hit enter to submit.</p>
         <p v-else class="text-center">Try again next round...</p>
         <div class="text-center">
           <button

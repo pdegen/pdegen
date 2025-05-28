@@ -3,7 +3,8 @@ import { onMounted } from 'vue'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import QuoteCycler from '@/components/QuoteCycler.vue'
 import BookRecs from '@/components/BookRecs.vue'
-import ImageGallery from '@/components/ImageGallery.vue'
+import MovieGallery from '@/components/MovieGallery.vue'
+import ArtGallery from '@/components/ArtGallery.vue'
 import Navigation from '@/components/TheNavigation.vue'
 import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
@@ -54,6 +55,9 @@ onMounted(() => {
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#gallery">Movie Game</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#artgallery">Gallery</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <NavigationDropdown />
@@ -124,7 +128,21 @@ onMounted(() => {
       <div class="divider-custom-line"></div>
     </div>
 
-    <ImageGallery />
+    <MovieGallery />
+  </section>
+
+  <!-- Art Section -->
+  <section class="page-section cv bg-light" id="artgallery">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Art Gallery</h2>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-palette"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <ArtGallery />
   </section>
 
   <!-- Navigation Section-->

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import Papa from 'papaparse'
+import { parseCSV } from '@/assets/js/scripts'
 import quotesCSV from '@/assets/data/quotes.csv?raw'
 
 type QuoteType = {
@@ -8,16 +8,6 @@ type QuoteType = {
   author: string
   work?: string
   noquotemarks?: boolean
-}
-
-// must have header with QuoteType col names
-function parseCSV(): QuoteType[] {
-  const parsed = Papa.parse<QuoteType>(quotesCSV, {
-    header: true,
-    skipEmptyLines: true,
-  })
-
-  return parsed.data
 }
 
 const testQuote = false
@@ -41,7 +31,8 @@ function getNextQuote(quotes: QuoteType[]): QuoteType {
   return quote
 }
 
-const quotes = parseCSV()
+// must have header with QuoteType col names
+const quotes = parseCSV<QuoteType>(quotesCSV)
 const shuffled = [...quotes].sort(() => 0.5 - Math.random())
 let currentQuoteIndex = 0
 

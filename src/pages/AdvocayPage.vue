@@ -136,7 +136,7 @@ onMounted(() => {
   <!-- Amnesty Section -->
   <section class="page-section cv bg-light" id="amnesty">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
-      Amnesty Inernational
+      Amnesty International
     </h2>
 
     <!-- Icon Divider-->

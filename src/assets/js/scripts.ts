@@ -1,4 +1,14 @@
 import * as bootstrap from 'bootstrap'
+import Papa from 'papaparse'
+
+export function parseCSV<T>(csvData: string): T[] {
+  const parsed = Papa.parse<T>(csvData, {
+    header: true,
+    skipEmptyLines: true,
+  })
+
+  return parsed.data
+}
 
 export function navbarHandler() {
   // Navbar shrink function
