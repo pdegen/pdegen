@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { animateBalls } from '@/assets/js/anims.ts'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import QuoteCycler from '@/components/QuoteCycler.vue'
 import BookRecs from '@/components/BookRecs.vue'
@@ -9,7 +8,6 @@ import Navigation from '@/components/TheNavigation.vue'
 import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
 onMounted(() => {
-  animateBalls({ amplitude: 40, speed: 1.5 })
   navbarHandler()
 
   const script = document.createElement('script')

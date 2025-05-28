@@ -49,7 +49,7 @@ const isDev = import.meta.env.MODE === 'development'
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
           </li>
-          <li class="nav-item mx-0 mx-lg-1">
+          <li class="nav-item mx-0 mx-lg-1" href="#more">
             <NavigationDropdown />
           </li>
         </ul>
@@ -295,7 +295,7 @@ const isDev = import.meta.env.MODE === 'development'
         <div class="col-lg-12 ms-auto">
           <p class="lead">
             During my PhD years, I enjoyed diverse collaborations with colleagues working in
-            preclinical research, performing high-dimensional omics analyses for radiation oncology
+            preclinical research, performing various computational analyses for radiation oncology
             and neuroscience experiments. Additionally, I conducted original research related to
             issues such as replicability and robustness of bioinformatics pipelines, which led to my
             interest in open science and meta science.

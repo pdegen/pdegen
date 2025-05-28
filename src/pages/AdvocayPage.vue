@@ -5,6 +5,7 @@ import Navigation from '@/components/TheNavigation.vue'
 import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
 import img_swissrn from '@/assets/img/swissrn-logo.png'
+import img_landuse from '@/assets/img/Land-use-of-different-diets-Poore-Nemecek.png'
 
 onMounted(() => {
   navbarHandler()
@@ -52,6 +53,9 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty International</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#climate">Climate</a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
             <NavigationDropdown />
           </li>
         </ul>
@@ -77,8 +81,8 @@ onMounted(() => {
     </div>
   </header>
 
-  <!-- Amnesty Section -->
-  <section class="page-section cv bg-light" id="amnesty">
+  <!-- OS Section -->
+  <section class="page-section cv bg-light" id="open">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Open Science
     </h2>
@@ -168,6 +172,32 @@ onMounted(() => {
         >petition</a
       >
       (de / fr) to support Amnesty's ongoing campaign to #ProtectTheProtest
+    </div>
+  </section>
+
+  <!-- Climate Section -->
+  <section class="page-section cv bg-light" id="open">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Climate</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-leaf"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="container text-center">
+      <a href="https://ourworldindata.org/land-use-diets"
+        >If the world adopted a plant-based diet, we would reduce global agricultural land use from
+        4 to 1 billion hectares</a
+      >
+      (Our World in Data)
+
+      <img
+        class="img-fluid"
+        :src="img_landuse"
+        alt="Global land use for agriculture across different diets"
+        style="width: 80%; margin: 1rem"
+      />
     </div>
   </section>
 
