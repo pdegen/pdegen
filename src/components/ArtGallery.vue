@@ -13,8 +13,8 @@ type Artwork = {
   year?: number
 }
 
+const hoverGalleryButtons = ref(false)
 const artworks = parseCSV<Artwork>(artworksCSV)
-debugger
 const shuffled = [...artworks].sort(() => 0.5 - Math.random())
 
 // Reactive selected images
@@ -47,6 +47,7 @@ const advanceQueue = (reversed: boolean = false) => {
 }
 // Initialize selection
 const selectedWork = ref<Artwork>(shuffled[currentIndex])
+advanceQueue()
 </script>
 
 <template>
@@ -84,8 +85,17 @@ const selectedWork = ref<Artwork>(shuffled[currentIndex])
   </div>
 
   <!-- Modal -->
-  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" ref="modal">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+  <div
+    class="modal fade justify-content-centered align-items-center"
+    id="imageModal"
+    tabindex="-1"
+    aria-hidden="true"
+    ref="modal"
+  >
+    <div
+      class="modal-dialog modal-dialog-centered modal-lg responsive-modal"
+      style="max-height: 80vh; max-width: 80vw"
+    >
       <div class="modal-content bg-dark text-white">
         <div class="modal-header border-0">
           <button
@@ -96,25 +106,63 @@ const selectedWork = ref<Artwork>(shuffled[currentIndex])
           ></button>
         </div>
         <div class="modal-body text-center">
-          <img :src="modalData.src" class="img-fluid rounded mb-3" :alt="modalData.title" />
-
-          <div class="row justify-content-center align-items-center">
-            <div class="col-1">
-              <button type="button" class="btn btn-primary" @click="advanceQueue(true)">
-                <i class="fa-solid fa-arrow-left"></i>
+          <div class="row justify-content-center align-items-center text-center">
+            <div class="col-auto">
+              <!-- Left Button -->
+              <button
+                @click="advanceQueue(true)"
+                class="position-absolute top-0 start-0 btn btn-dark d-flex align-items-center justify-content-center"
+                style="
+                  height: 100%;
+                  width: 15%;
+                  background-color: rgba(33, 37, 41, 0);
+                  border: none;
+                "
+                :style="{
+                  backgroundColor: hoverGalleryButtons
+                    ? 'rgba(33, 37, 41, 0.7)'
+                    : 'rgba(33, 37, 41, 0)',
+                }"
+                @mouseover="hoverGalleryButtons = true"
+                @mouseleave="hoverGalleryButtons = false"
+              >
+                <i class="fa-solid fa-chevron-left fa-2xl"></i>
               </button>
             </div>
+            <div class="col">
+              <img
+                :src="modalData.src"
+                class="img-fluid rounded d-block w-100"
+                :alt="modalData.title"
+                style="object-fit: contain; max-height: 80vh"
+              />
 
-            <div class="col-9">
-              <h5>{{ modalData.title || 'Unknown title' }}</h5>
-              <p>
+              <h5 style="margin: 1rem 0 0">{{ modalData.title || 'Unknown title' }}</h5>
+              <p style="margin-bottom: 0">
                 {{ modalData.artist || 'Unknown artist'
                 }}{{ modalData.year ? ', ' + modalData.year : '' }}
               </p>
             </div>
-            <div class="col-1">
-              <button type="button" class="btn btn-primary" @click="advanceQueue()">
-                <i class="fa-solid fa-arrow-right"></i>
+            <div class="col-auto text-center">
+              <!-- Right Button -->
+              <button
+                @click="advanceQueue()"
+                class="position-absolute top-0 end-0 btn btn-dark d-flex align-items-center justify-content-center"
+                style="
+                  height: 100%;
+                  width: 15%;
+                  background-color: rgba(33, 37, 41, 0);
+                  border: none;
+                "
+                :style="{
+                  backgroundColor: hoverGalleryButtons
+                    ? 'rgba(33, 37, 41, 0.7)'
+                    : 'rgba(33, 37, 41, 0)',
+                }"
+                @mouseover="hoverGalleryButtons = true"
+                @mouseleave="hoverGalleryButtons = false"
+              >
+                <i class="fa-solid fa-chevron-right fa-2xl"></i>
               </button>
             </div>
           </div>
@@ -148,5 +196,11 @@ const selectedWork = ref<Artwork>(shuffled[currentIndex])
 }
 .gallery-item:hover .overlay {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .responsive-modal {
+    max-width: 100vw !important;
+  }
 }
 </style>
