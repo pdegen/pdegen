@@ -69,7 +69,13 @@ advanceQueue()
         />
       </div>
     </div>
-    <br />
+    <div class="text-center">
+      <h5 style="margin: 1rem 0 0">{{ modalData.title || 'Unknown title' }}</h5>
+      <p style="margin-bottom: 0">
+        {{ modalData.artist || 'Unknown artist' }}{{ modalData.year ? ', ' + modalData.year : '' }}
+      </p>
+      <br />
+    </div>
     <div class="row justify-content-center gap-4">
       <div class="col-5 col-md-3">
         <button type="button" class="btn btn-primary btn-lg w-100" @click="advanceQueue(true)">
