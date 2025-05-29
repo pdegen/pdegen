@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { parseCSV } from '@/assets/js/scripts'
+import { parseCSV, shuffleArray } from '@/assets/js/scripts'
 import quotesCSV from '@/assets/data/quotes.csv?raw'
 
 type QuoteType = {
@@ -22,7 +22,7 @@ function getNextQuote(quotes: QuoteType[]): QuoteType {
 
   // cycle next quote
   currentQuoteIndex = currentQuoteIndex + 1 == quotes.length ? 0 : currentQuoteIndex + 1
-  const quote = shuffled[currentQuoteIndex]
+  const quote = quotes[currentQuoteIndex]
 
   // quote of the day
   //const index = Math.floor((Date.now() / (1000 * 60 * 60 * 24)) % quotes.length)
@@ -33,10 +33,10 @@ function getNextQuote(quotes: QuoteType[]): QuoteType {
 
 // must have header with QuoteType col names
 const quotes = parseCSV<QuoteType>(quotesCSV)
-const shuffled = [...quotes].sort(() => 0.5 - Math.random())
+shuffleArray(quotes)
 let currentQuoteIndex = 0
 
-const quote = ref<QuoteType>(getNextQuote(shuffled))
+const quote = ref<QuoteType>(getNextQuote(quotes))
 //const quote = ref<QuoteType>(quotes[quotes.length - 1])
 </script>
 

@@ -1,136 +1,7 @@
-<template>
-  <div class="container">
-    <div class="text-center" v-if="!gameEnded">
-      <p>Why, my favorite movies? I'm glad you asked!</p>
-      <h4 v-if="!submittedGuess">Guess the movie</h4>
-      <h4 v-else-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-danger">
-        Incorrect!
-      </h4>
-      <h4 v-else-if="submittedWrongGuessAgain" class="text-danger">Still incorrect!</h4>
-      <h4 v-else-if="submittedGuess" class="text-success">Correct!</h4>
-      <h4>{{ winStreak > 4 ? '🔥' : '' }}Streak: {{ winStreak }}{{ winStreak > 4 ? '🔥' : '' }}</h4>
-
-      <div v-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-center">
-        Last try! Click the screenshot to reveal a hint...
-      </div>
-
-      <div v-else-if="submittedWrongGuessAgain" class="text-center">
-        <h5>{{ selectedImages[0].title }}</h5>
-        <p>{{ selectedImages[0].desc }}</p>
-      </div>
-
-      <div v-if="gameWon">
-        <p>
-          You've reached a streak of 3 and won the game!<br />Continue playing or reveal the
-          complete movie list by clicking the "End Game" button below.
-        </p>
-      </div>
-    </div>
-    <div class="text-center" v-if="gameEnded">
-      <h3>🎉 Congratulations! 🎉</h3>
-      <p>
-        You won with a streak of {{ winStreak }}! As a reward, you get to to behold the complete
-        list of movies.
-      </p>
-    </div>
-    <br />
-    <div class="row g-4" v-if="gameEnded">
-      <div v-for="(img, index) in shuffled" :key="index" class="col-sm-6 col-md-4 col-lg-3">
-        <div class="gallery-item position-relative" @click="openModal(img)">
-          <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
-          <div class="overlay">
-            <div>
-              <p class="text-white">{{ img.title }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button type="button" class="btn btn-primary" @click="replay()">Play Again</button>
-    </div>
-    <div class="d-flex justify-content-center" v-else>
-      <div v-for="(img, index) in selectedImages" :key="index" class="col-12 col-md-6">
-        <div class="gallery-item position-relative" @click="openModal(img)">
-          <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
-          <div class="overlay">
-            <div v-if="revealAnswer">
-              <p class="text-white">{{ img.title }}</p>
-            </div>
-            <div v-else><p class="text-white">?</p></div>
-          </div>
-        </div>
-        <br />
-        <form @submit.prevent="checkAnswer(guess, img.title)">
-          <input
-            v-model="guess"
-            type="text"
-            class="form-control"
-            id="guessAnswer"
-            placeholder="Enter guess"
-            :disabled="submittedWrongGuessAgain"
-          />
-        </form>
-        <p v-if="!submittedWrongGuessAgain" class="text-center mt-2">Hit enter to submit.</p>
-        <p v-else class="text-center">Try again next round...</p>
-        <div class="text-center">
-          <button
-            type="button"
-            class="btn btn-primary btn-lg"
-            @click="advanceMovieQueue()"
-            :disabled="!submittedGuess"
-          >
-            Next Movie
-          </button>
-          <div v-if="gameWon">
-            <br />
-            <button
-              v-if="gameWon"
-              type="button"
-              class="btn btn-secondary btn-lg"
-              @click="endGame()"
-            >
-              End Game
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" ref="modal">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content bg-dark text-white">
-          <div class="modal-header border-0">
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body text-center">
-            <img :src="modalData.src" class="img-fluid rounded mb-3" :alt="modalData.title" />
-            <div v-if="revealAnswer">
-              <h5>{{ modalData.title }}</h5>
-              <p>{{ modalData.desc }}</p>
-            </div>
-            <div v-else>
-              <div v-if="!revealHint && canRevealHint">
-                <button type="button" class="btn btn-secondary" @click="revealHint = true">
-                  Hint
-                </button>
-              </div>
-              <div v-else-if="revealHint">{{ modalData.desc }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import * as bootstrap from 'bootstrap'
+import { shuffleArray } from '@/assets/js/scripts'
 
 type image_modal = {
   src: string
@@ -322,7 +193,7 @@ const images: image_modal[] = [
   },
 ]
 
-let shuffled = [...images].sort(() => 0.5 - Math.random())
+shuffleArray(images)
 
 // TO DO: small game where user guesses film title/director/year
 
@@ -378,7 +249,7 @@ const checkAnswer = (userGuess: string, correctAnswer: string) => {
 }
 
 const endGame = () => {
-  selectedImages.value = shuffled
+  selectedImages.value = images
   gameEnded.value = true
   revealAnswer.value = true
 }
@@ -393,7 +264,7 @@ const openModal = (img: image_modal) => {
 }
 
 const replay = () => {
-  shuffled = [...images].sort(() => 0.5 - Math.random())
+  shuffleArray(images)
   gameEnded.value = false
   gameWon.value = false
   winStreak.value = 0
@@ -401,8 +272,8 @@ const replay = () => {
 }
 
 const advanceMovieQueue = () => {
-  currentFilmIndex = currentFilmIndex + 1 == shuffled.length ? 0 : currentFilmIndex + 1
-  selectedImages.value = shuffled.slice(currentFilmIndex, currentFilmIndex + 1)
+  currentFilmIndex = currentFilmIndex + 1 == images.length ? 0 : currentFilmIndex + 1
+  selectedImages.value = images.slice(currentFilmIndex, currentFilmIndex + 1)
   revealHint.value = false
   revealAnswer.value = false
   submittedGuess.value = false
@@ -414,6 +285,136 @@ const advanceMovieQueue = () => {
 // Initialize selection
 advanceMovieQueue()
 </script>
+
+<template>
+  <div class="container">
+    <div class="text-center" v-if="!gameEnded">
+      <p>Why, my favorite movies? I'm glad you asked!</p>
+      <h4 v-if="!submittedGuess">Guess the movie</h4>
+      <h4 v-else-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-danger">
+        Incorrect!
+      </h4>
+      <h4 v-else-if="submittedWrongGuessAgain" class="text-danger">Still incorrect!</h4>
+      <h4 v-else-if="submittedGuess" class="text-success">Correct!</h4>
+      <h4>{{ winStreak > 4 ? '🔥' : '' }}Streak: {{ winStreak }}{{ winStreak > 4 ? '🔥' : '' }}</h4>
+
+      <div v-if="submittedWrongGuess && !submittedWrongGuessAgain" class="text-center">
+        Last try! Click the screenshot to reveal a hint...
+      </div>
+
+      <div v-else-if="submittedWrongGuessAgain" class="text-center">
+        <h5>{{ selectedImages[0].title }}</h5>
+        <p>{{ selectedImages[0].desc }}</p>
+      </div>
+
+      <div v-if="gameWon">
+        <p>
+          You've reached a streak of 3 and won the game!<br />Continue playing or reveal the
+          complete movie list by clicking the "End Game" button below.
+        </p>
+      </div>
+    </div>
+    <div class="text-center" v-if="gameEnded">
+      <h3>🎉 Congratulations! 🎉</h3>
+      <p>
+        You won with a streak of {{ winStreak }}! As a reward, you get to to behold the complete
+        list of movies.
+      </p>
+    </div>
+    <br />
+    <div class="row g-4" v-if="gameEnded">
+      <div v-for="(img, index) in images" :key="index" class="col-sm-6 col-md-4 col-lg-3">
+        <div class="gallery-item position-relative" @click="openModal(img)">
+          <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
+          <div class="overlay">
+            <div>
+              <p class="text-white">{{ img.title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" @click="replay()">Play Again</button>
+    </div>
+    <div class="d-flex justify-content-center" v-else>
+      <div v-for="(img, index) in selectedImages" :key="index" class="col-12 col-md-6">
+        <div class="gallery-item position-relative" @click="openModal(img)">
+          <img :src="img.src" :alt="img.title" class="img-fluid rounded gallery-img" />
+          <div class="overlay">
+            <div v-if="revealAnswer">
+              <p class="text-white">{{ img.title }}</p>
+            </div>
+            <div v-else><p class="text-white">?</p></div>
+          </div>
+        </div>
+        <br />
+        <form @submit.prevent="checkAnswer(guess, img.title)">
+          <input
+            v-model="guess"
+            type="text"
+            class="form-control"
+            id="guessAnswer"
+            placeholder="Enter guess"
+            :disabled="submittedWrongGuessAgain"
+          />
+        </form>
+        <p v-if="!submittedWrongGuessAgain" class="text-center mt-2">Hit enter to submit.</p>
+        <p v-else class="text-center">Try again next round...</p>
+        <div class="text-center">
+          <button
+            type="button"
+            class="btn btn-primary btn-lg"
+            @click="advanceMovieQueue()"
+            :disabled="!submittedGuess"
+          >
+            Next Movie
+          </button>
+          <div v-if="gameWon">
+            <br />
+            <button
+              v-if="gameWon"
+              type="button"
+              class="btn btn-secondary btn-lg"
+              @click="endGame()"
+            >
+              End Game
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true" ref="modal">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img :src="modalData.src" class="img-fluid rounded mb-3" :alt="modalData.title" />
+            <div v-if="revealAnswer">
+              <h5>{{ modalData.title }}</h5>
+              <p>{{ modalData.desc }}</p>
+            </div>
+            <div v-else>
+              <div v-if="!revealHint && canRevealHint">
+                <button type="button" class="btn btn-secondary" @click="revealHint = true">
+                  Hint
+                </button>
+              </div>
+              <div v-else-if="revealHint">{{ modalData.desc }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <style>
 .gallery-item {

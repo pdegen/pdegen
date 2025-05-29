@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { navbarHandler, progressbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
-import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
+//import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 import PortFolio from '@/components/PortFolio.vue'
 
 onMounted(() => {
@@ -49,9 +49,12 @@ const isDev = import.meta.env.MODE === 'development'
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a>
           </li>
-          <li class="nav-item mx-0 mx-lg-1" href="#more">
-            <NavigationDropdown />
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#more">More</a>
           </li>
+          <!-- <li class="nav-item mx-0 mx-lg-1" href="#more">
+            <NavigationDropdown />
+          </li> -->
         </ul>
       </div>
     </div>

@@ -6,7 +6,7 @@ import BookRecs from '@/components/BookRecs.vue'
 import MovieGallery from '@/components/MovieGallery.vue'
 import ArtGallery from '@/components/ArtGallery.vue'
 import Navigation from '@/components/TheNavigation.vue'
-import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
+//import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
 onMounted(() => {
   navbarHandler()
@@ -60,8 +60,11 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#artgallery">Gallery</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <NavigationDropdown />
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#more">More</a>
           </li>
+          <!-- <li class="nav-item mx-0 mx-lg-1">
+            <NavigationDropdown />
+          </li> -->
         </ul>
       </div>
     </div>
@@ -146,7 +149,7 @@ onMounted(() => {
   </section>
 
   <!-- Navigation Section-->
-  <section class="page-section bg-primary text-white mb-0" id="navigation" style="padding: 2rem">
+  <section class="page-section bg-primary text-white mb-0" id="more" style="padding: 2rem">
     <Navigation />
   </section>
 

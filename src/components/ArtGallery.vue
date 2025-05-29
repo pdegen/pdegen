@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import * as bootstrap from 'bootstrap'
-import { parseCSV } from '@/assets/js/scripts'
+import { parseCSV, shuffleArray } from '@/assets/js/scripts'
 import artworksCSV from '@/assets/data/artworks.csv?raw'
 
 // TO DO: filter artworks by year, mood
@@ -15,7 +15,7 @@ type Artwork = {
 
 const hoverGalleryButtons = ref(false)
 const artworks = parseCSV<Artwork>(artworksCSV)
-const shuffled = [...artworks].sort(() => 0.5 - Math.random())
+shuffleArray(artworks)
 
 // Reactive selected images
 const modalData = ref<Artwork>(artworks[0])
@@ -38,15 +38,15 @@ const openModal = (work: Artwork) => {
 const advanceQueue = (reversed: boolean = false) => {
   debugger
   if (reversed) {
-    currentIndex = currentIndex - 1 < 0 ? shuffled.length : currentIndex - 1
+    currentIndex = currentIndex - 1 < 0 ? artworks.length : currentIndex - 1
   } else {
-    currentIndex = currentIndex + 1 == shuffled.length ? 0 : currentIndex + 1
+    currentIndex = currentIndex + 1 == artworks.length ? 0 : currentIndex + 1
   }
-  selectedWork.value = shuffled[currentIndex]
+  selectedWork.value = artworks[currentIndex]
   reloadModal(selectedWork.value)
 }
 // Initialize selection
-const selectedWork = ref<Artwork>(shuffled[currentIndex])
+const selectedWork = ref<Artwork>(artworks[currentIndex])
 advanceQueue()
 </script>
 

@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
-import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
+//import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 
 import img_swissrn from '@/assets/img/swissrn-logo.png'
 import img_landuse from '@/assets/img/Land-use-of-different-diets-Poore-Nemecek.png'
@@ -50,14 +50,17 @@ onMounted(() => {
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#open">Open Science</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty International</a>
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#climate">Climate</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <NavigationDropdown />
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#amnesty">Amnesty International</a>
           </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#more">More</a>
+          </li>
+          <!-- <li class="nav-item mx-0 mx-lg-1">
+            <NavigationDropdown />
+          </li> -->
         </ul>
       </div>
     </div>
@@ -82,7 +85,7 @@ onMounted(() => {
   </header>
 
   <!-- OS Section -->
-  <section class="page-section cv bg-light" id="open">
+  <section class="page-section bg-light" id="open">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Open Science
     </h2>
@@ -94,16 +97,13 @@ onMounted(() => {
     </div>
 
     <div class="container text-center">
-      <h3 class="bs-primary">Swiss Reproducibility Network</h3>
+      <div class="row justify-content-center">
+        <div class="col-7 col-md-4 col-lg-3 text-center">
+          <img class="img-fluid" :src="img_swissrn" alt="Swiss RN Logo" />
+        </div>
+      </div>
 
-      <img
-        class="img-fluid"
-        :src="img_swissrn"
-        alt="Swiss RN Logo"
-        style="width: 30%; margin: 1rem"
-      />
-
-      <p>
+      <p class="pt-3">
         Are you an early-career researcher based in Switzerland and interested in open science and
         reproducibility? Do you want to gain organizing experience and network with a group of
         likeminded individuals? Consider joinging the
@@ -133,8 +133,75 @@ onMounted(() => {
     </div>
   </section>
 
+  <!-- Climate Section -->
+  <section class="page-section bg-light" id="climate">
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Climate</h2>
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fa-solid fa-leaf"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-7 text-center">
+          <figure class="figure">
+            <img
+              class="figure-image img-fluid"
+              src="https://www.stockholmresilience.org/images/200.3d04209a18a2642b2fc15eb6/1694596418196/Planetary%20Boundaries%202023.png"
+              alt="The 2023 update to the Planetary boundaries"
+            />
+            <figcaption class="figure-caption">
+              <strong
+                ><a href="https://www.stockholmresilience.org/research/planetary-boundaries.html"
+                  >The 2023 update to the Planetary boundaries.</a
+                ></strong
+              >
+              Credit: Azote for Stockholm Resilience Centre, based on analysis in Richardson et al
+              2023.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="alert alert-primary col-4 mx-auto m-4" role="alert">
+        Peas: 2.16 m<sup>2</sup> / 1000 kcal<br />
+        Tofu: 1.30 m<sup>2</sup> / 1000 kcal<br />
+        Olive oil: 2.98 m<sup>2</sup> / 1000 kcal<br />
+        Nuts: 2.11 m<sup>2</sup> / 1000 kcal<br />
+        Beef: 119.49 m<sup>2</sup> / 1000 kcal<br />
+        Potatoes: 1.2 m<sup>2</sup> / 1000 kcal<br />
+
+        <br />
+        someone who is good at the economy please help me budget this. our planet is dying
+      </div>
+
+      <div class="col-12 col-md-8 text-center mx-auto">
+        <figure class="figure">
+          <img
+            class="figure-image img-fluid"
+            :src="img_landuse"
+            alt="Global land use for agriculture across different diets"
+          />
+          <figcaption class="figure-caption">></figcaption>
+        </figure>
+      </div>
+
+      <div class="alert alert-primary col-12 col-md-4 mx-auto mt-4" role="alert">
+        <strong
+          ><a href="https://ourworldindata.org/land-use-diets"
+            >If the world adopted a plant-based diet, we would reduce global agricultural land use
+            from 4 to 1 billion hectares</a
+          ></strong
+        ><br />
+        (Our World in Data)
+      </div>
+    </div>
+  </section>
+
   <!-- Amnesty Section -->
-  <section class="page-section cv bg-light" id="amnesty">
+  <section class="page-section bg-light" id="amnesty">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">
       Amnesty International
     </h2>
@@ -175,34 +242,8 @@ onMounted(() => {
     </div>
   </section>
 
-  <!-- Climate Section -->
-  <section class="page-section cv bg-light" id="open">
-    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Climate</h2>
-    <!-- Icon Divider-->
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fa-solid fa-leaf"></i></div>
-      <div class="divider-custom-line"></div>
-    </div>
-
-    <div class="container text-center">
-      <a href="https://ourworldindata.org/land-use-diets"
-        >If the world adopted a plant-based diet, we would reduce global agricultural land use from
-        4 to 1 billion hectares</a
-      >
-      (Our World in Data)
-
-      <img
-        class="img-fluid"
-        :src="img_landuse"
-        alt="Global land use for agriculture across different diets"
-        style="width: 80%; margin: 1rem"
-      />
-    </div>
-  </section>
-
   <!-- Navigation Section-->
-  <section class="page-section bg-primary text-white mb-0" id="navigation" style="padding: 2rem">
+  <section class="page-section bg-primary text-white mb-0" id="more" style="padding: 2rem">
     <Navigation />
   </section>
 
