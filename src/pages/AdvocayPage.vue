@@ -103,7 +103,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <p class="pt-3">
+      <div class="alert alert-primary col-12 col-md-6 mx-auto mt-4 text-start" role="alert">
         Are you an early-career researcher based in Switzerland and interested in open science and
         reproducibility? Do you want to gain organizing experience and network with a group of
         likeminded individuals? Consider joinging the
@@ -113,7 +113,7 @@ onMounted(() => {
           rel="noopener noreferrer"
           >Swiss Reproducibility Network Academy</a
         >!
-      </p>
+      </div>
 
       <h3 class="bs-primary">Resources</h3>
 
@@ -144,6 +144,22 @@ onMounted(() => {
     </div>
 
     <div class="container text-center">
+      <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="text-center">
+          <strong>
+            <a href="https://www.science.org/doi/10.1126/sciadv.adh2458"
+              >Earth beyond six of nine planetary boundaries</a
+            ></strong
+          >
+        </p>
+        <p class="text-start fst-italic">
+          Our model results demonstrate that one of the most powerful means that humanity has at its
+          disposal to combat climate change is respecting the land system change boundary. Bringing
+          total global forest cover back to the levels of the late 20th century would provide a
+          substantial cumulative sink for atmospheric CO<sub>2</sub> in 2100.
+        </p>
+      </div>
+
       <div class="row justify-content-center">
         <div class="col-12 col-md-7 text-center">
           <figure class="figure">
@@ -165,7 +181,26 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="alert alert-primary col-4 mx-auto m-4" role="alert">
+      <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="text-center fw-bold">
+          <a href="https://www.penguinrandomhouse.com/books/645538/regenesis-by-george-monbiot/"
+            >George Monbiot — Regenesis</a
+          >
+        </p>
+        <p class="text-start fst-italic">
+          By 2050, the human population of the planet will rise to between 9 and 10 billion. In
+          principle, the world already produces enough food for between 10 and 14 billion. The
+          problem is that an ever smaller proportion of this embarrassment of riches is feeding
+          people directly. Why? Because while the human population growth rate has fallen to 1.05
+          per cent a year, the growth rate of the livestock population has risen to 2.4 per cent a
+          year. By 2050, to put it in brutal terms, the extra humans on the planet will weigh a
+          little over 100 million tonnes, whereas, unless the current trend is disrupted, the extra
+          farm animals will weigh 400 million tonnes. The biggest population crisis is not the
+          growth in human numbers, but the growth in livestock numbers.
+        </p>
+      </div>
+
+      <div class="alert alert-primary col-12 col-md-6 mx-auto mt-4" role="alert">
         Peas: 2.16 m<sup>2</sup> / 1000 kcal<br />
         Tofu: 1.30 m<sup>2</sup> / 1000 kcal<br />
         Olive oil: 2.98 m<sup>2</sup> / 1000 kcal<br />
@@ -175,6 +210,20 @@ onMounted(() => {
 
         <br />
         someone who is good at the economy please help me budget this. our planet is dying
+      </div>
+
+      <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="text-center fw-bold">
+          <a href="https://www.ipcc.ch/srccl/chapter/chapter-5/">IPCC Executive Summary</a>
+        </p>
+        <p class="text-start fst-italic">
+          In summary, there is significant potential mitigation (high confidence) arising from the
+          adoption of diets in line with dietary recommendations made on the basis of health. [...]
+          These are typically capped at the number of calories and higher in plant-based foods, such
+          as vegetables, fruits, whole grains, legumes, nuts and seeds, and lower in animal-sourced
+          foods, fats and sugar. Such diets have the potential to be both more sustainable and
+          healthier than alternative diets [...]
+        </p>
       </div>
 
       <div class="col-12 col-md-8 text-center mx-auto">
@@ -188,14 +237,18 @@ onMounted(() => {
         </figure>
       </div>
 
-      <div class="alert alert-primary col-12 col-md-4 mx-auto mt-4" role="alert">
-        <strong
-          ><a href="https://ourworldindata.org/land-use-diets"
-            >If the world adopted a plant-based diet, we would reduce global agricultural land use
-            from 4 to 1 billion hectares</a
-          ></strong
-        ><br />
-        (Our World in Data)
+      <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="text-center fw-bold">
+          <a href="https://ourworldindata.org/land-use-diets">Our World in Data</a>
+        </p>
+        <p class="text-start fst-italic">
+          If the world adopted a plant-based diet, we would reduce global agricultural land use from
+          4 to 1 billion hectares. [...] Less than half – only 48% – of the world's cereals are
+          eaten by humans. 41% is used for animal feed and 11% for biofuels. [...] Not all crops
+          provide low-quality protein – legumes such as peas, beans, lentils, and products such as
+          tofu have a good amino acid profile; when mixed with cereals in a person's diet, it's
+          possible to get the full range of essential elements.
+        </p>
       </div>
     </div>
   </section>
@@ -229,16 +282,18 @@ onMounted(() => {
       </div>
 
       <br />
-      Free to dance... free to protest!
-      <br />
-      Sign the
-      <a
-        href="https://action.amnesty.ch/de/amnesty-international-petition-demonstrationsfreiheit-garantieren/?utm_source=amnesty.ch&utm_medium=referral&utm_campaign=demonstrationsfreiheit&utm_term=&utm_content=petition"
-        target="_blank"
-        rel="noopener noreferrer"
-        >petition</a
-      >
-      (de / fr) to support Amnesty's ongoing campaign to #ProtectTheProtest
+
+      <div class="alert alert-primary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="fw-bold">Free to dance... free to protest!</p>
+        Sign the
+        <a
+          href="https://action.amnesty.ch/de/amnesty-international-petition-demonstrationsfreiheit-garantieren/?utm_source=amnesty.ch&utm_medium=referral&utm_campaign=demonstrationsfreiheit&utm_term=&utm_content=petition"
+          target="_blank"
+          rel="noopener noreferrer"
+          >petition</a
+        >
+        (de / fr) to support Amnesty's ongoing campaign to #ProtectTheProtest
+      </div>
     </div>
   </section>
 

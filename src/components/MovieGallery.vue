@@ -195,8 +195,6 @@ const images: image_modal[] = [
 
 shuffleArray(images)
 
-// TO DO: small game where user guesses film title/director/year
-
 // Reactive selected images
 const selectedImages = ref<image_modal[]>([])
 const modalData = ref<image_modal>(images[0])
