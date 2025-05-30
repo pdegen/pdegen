@@ -3,9 +3,16 @@ import { onMounted } from 'vue'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
 //import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
+import VideoCarousel from '@/components/VideoCarousel.vue'
+import type { Video } from '@/components/VideoCarousel.vue'
 
 import img_swissrn from '@/assets/img/swissrn-logo.png'
 import img_landuse from '@/assets/img/Land-use-of-different-diets-Poore-Nemecek.png'
+
+const videos: Video[] = [
+  { src: 'https://www.youtube.com/embed/cjIO73DIcOE?si=Yraxqq0oqRQ1Onow' }, // monbiot
+  { src: 'https://www.youtube.com/embed/h1jOqyjcO4g?si=yafG-5Bz04FB1Pvj' }, // clark
+]
 
 onMounted(() => {
   navbarHandler()
@@ -252,6 +259,10 @@ onMounted(() => {
       </div>
     </div>
   </section>
+
+  <div class="col-10 col-md-4 mx-auto">
+    <VideoCarousel :videos="videos" />
+  </div>
 
   <!-- Amnesty Section -->
   <section class="page-section bg-light" id="amnesty">
