@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import * as bootstrap from 'bootstrap'
 
 enum BookCategory {
@@ -200,6 +200,23 @@ const filteredBooks = computed(() =>
       book.category === (showFiction.value ? BookCategory.Fiction : BookCategory.NonFiction),
   ),
 )
+
+onMounted(() => {
+  const el = document.querySelector('.scroll-container')
+  if (el) {
+    el.addEventListener(
+      'wheel',
+      (e) => {
+        const event = e as WheelEvent
+        if (event.deltaY !== 0) {
+          event.preventDefault()
+          el.scrollLeft += event.deltaY
+        }
+      },
+      { passive: false },
+    )
+  }
+})
 </script>
 
 <template>
@@ -216,7 +233,7 @@ const filteredBooks = computed(() =>
 
     <div class="d-flex justify-content-center">
       <div
-        class="scroll-container d-flex justify-content-start"
+        class="scroll-container d-flex justify-content-start col-8"
         style="
           overflow-x: auto;
           overflow-y: hidden;
