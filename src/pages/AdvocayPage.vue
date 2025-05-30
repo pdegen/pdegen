@@ -2,9 +2,9 @@
 import { onMounted } from 'vue'
 import { navbarHandler } from '@/assets/js/scripts.ts'
 import Navigation from '@/components/TheNavigation.vue'
-//import NavigationDropdown from '@/components/TheNavigationDropdown.vue'
 import VideoCarousel from '@/components/VideoCarousel.vue'
 import type { Video } from '@/components/VideoCarousel.vue'
+import ImageZoom from '@/components/ImageZoom.vue'
 
 import img_swissrn from '@/assets/img/swissrn-logo.png'
 import img_landuse from '@/assets/img/Land-use-of-different-diets-Poore-Nemecek.png'
@@ -160,21 +160,23 @@ onMounted(() => {
           >
         </p>
         <p class="text-start fst-italic">
-          Our model results demonstrate that one of the most powerful means that humanity has at its
-          disposal to combat climate change is respecting the land system change boundary. Bringing
-          total global forest cover back to the levels of the late 20th century would provide a
-          substantial cumulative sink for atmospheric CO<sub>2</sub> in 2100.
+          Our model results demonstrate that one of the <strong>most powerful means</strong> that
+          humanity has at its disposal to combat climate change is respecting the
+          <strong>land system change</strong> boundary. Bringing total global forest cover back to
+          the levels of the late 20th century would provide a substantial cumulative sink for
+          atmospheric CO<sub>2</sub> in 2100.
         </p>
       </div>
 
       <div class="row justify-content-center">
         <div class="col-12 col-md-7 text-center">
           <figure class="figure">
-            <img
-              class="figure-image img-fluid"
+            <ImageZoom
               src="https://www.stockholmresilience.org/images/200.3d04209a18a2642b2fc15eb6/1694596418196/Planetary%20Boundaries%202023.png"
               alt="The 2023 update to the Planetary boundaries"
+              backgroundColor="rgba(255,255,255,1)"
             />
+
             <figcaption class="figure-caption">
               <strong
                 ><a href="https://www.stockholmresilience.org/research/planetary-boundaries.html"
@@ -202,8 +204,11 @@ onMounted(() => {
           per cent a year, the growth rate of the livestock population has risen to 2.4 per cent a
           year. By 2050, to put it in brutal terms, the extra humans on the planet will weigh a
           little over 100 million tonnes, whereas, unless the current trend is disrupted, the extra
-          farm animals will weigh 400 million tonnes. The biggest population crisis is not the
-          growth in human numbers, but the growth in livestock numbers.
+          farm animals will weigh 400 million tonnes.
+          <strong
+            >The biggest population crisis is not the growth in human numbers, but the growth in
+            livestock numbers.</strong
+          >
         </p>
       </div>
 
@@ -217,6 +222,7 @@ onMounted(() => {
 
         <br />
         someone who is good at the economy please help me budget this. our planet is dying
+        <br />
       </div>
 
       <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
@@ -224,23 +230,24 @@ onMounted(() => {
           <a href="https://www.ipcc.ch/srccl/chapter/chapter-5/">IPCC Executive Summary</a>
         </p>
         <p class="text-start fst-italic">
-          In summary, there is significant potential mitigation (high confidence) arising from the
-          adoption of diets in line with dietary recommendations made on the basis of health. [...]
-          These are typically capped at the number of calories and higher in plant-based foods, such
-          as vegetables, fruits, whole grains, legumes, nuts and seeds, and lower in animal-sourced
-          foods, fats and sugar. Such diets have the potential to be both more sustainable and
-          healthier than alternative diets [...]
+          In summary, there is <strong>significant potential mitigation</strong> (high confidence)
+          arising from the <strong>adoption of diets</strong> in line with dietary recommendations
+          made on the basis of health. [...] These are typically capped at the number of calories
+          and <strong>higher in plant-based foods</strong>, such as vegetables, fruits, whole
+          grains, legumes, nuts and seeds, and lower in animal-sourced foods, fats and sugar. Such
+          diets have the potential to be both <strong>more sustainable and healthier</strong> than
+          alternative diets [...]
         </p>
       </div>
 
       <div class="col-12 col-md-8 text-center mx-auto">
         <figure class="figure">
-          <img
-            class="figure-image img-fluid"
+          <ImageZoom
             :src="img_landuse"
             alt="Global land use for agriculture across different diets"
           />
-          <figcaption class="figure-caption">></figcaption>
+
+          <figcaption class="figure-caption"></figcaption>
         </figure>
       </div>
 
@@ -249,12 +256,13 @@ onMounted(() => {
           <a href="https://ourworldindata.org/land-use-diets">Our World in Data</a>
         </p>
         <p class="text-start fst-italic">
-          If the world adopted a plant-based diet, we would reduce global agricultural land use from
-          4 to 1 billion hectares. [...] Less than half – only 48% – of the world's cereals are
-          eaten by humans. 41% is used for animal feed and 11% for biofuels. [...] Not all crops
-          provide low-quality protein – legumes such as peas, beans, lentils, and products such as
-          tofu have a good amino acid profile; when mixed with cereals in a person's diet, it's
-          possible to get the full range of essential elements.
+          If the world adopted a <strong>plant-based diet</strong>, we would
+          <strong>reduce global agricultural land use</strong> from 4 to 1 billion hectares. [...]
+          Less than half – only 48% – of the world's cereals are eaten by humans. 41% is used for
+          animal feed and 11% for biofuels. [...] Not all crops provide low-quality protein –
+          legumes such as peas, beans, lentils, and products such as tofu have a good amino acid
+          profile; when mixed with cereals in a person's diet,
+          <strong>it's possible to get the full range of essential elements</strong>.
         </p>
       </div>
     </div>

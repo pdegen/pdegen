@@ -217,6 +217,16 @@ onMounted(() => {
     )
   }
 })
+
+const scrollLeft = () => {
+  const container = document.querySelector('.scroll-container')
+  container?.scrollBy({ left: -300, behavior: 'smooth' })
+}
+
+const scrollRight = () => {
+  const container = document.querySelector('.scroll-container')
+  container?.scrollBy({ left: 300, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -232,8 +242,11 @@ onMounted(() => {
     </div>
 
     <div class="d-flex justify-content-center">
+      <button class="btn btn-lg p-3 col-auto" type="button" @click="scrollLeft">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
       <div
-        class="scroll-container d-flex justify-content-start col-8"
+        class="scroll-container d-flex justify-content-start col-10 cl-md-8"
         style="
           overflow-x: auto;
           overflow-y: hidden;
@@ -259,6 +272,9 @@ onMounted(() => {
           </div>
         </div>
       </div>
+      <button class="btn btn-lg p-3 col-auto" type="button" @click="scrollRight">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
     <!-- Modal -->
     <div class="modal fade" ref="modal" tabindex="-1">
@@ -273,7 +289,9 @@ onMounted(() => {
                 aria-label="Close"
               ></button>
               <!-- Left: Book cover -->
-              <div class="col-md-4 d-flex align-items-center justify-content-center text-center">
+              <div
+                class="col-md-4 d-flex align-items-center justify-content-center text-center py-4"
+              >
                 <img
                   :src="selectedBook?.cover"
                   alt="Book cover"

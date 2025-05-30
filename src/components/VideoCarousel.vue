@@ -52,11 +52,11 @@ defineProps<{
 
 <style scoped>
 .carousel-control-prev {
-  margin-left: -4rem;
+  margin-left: -5rem;
 }
 
 .carousel-control-next {
-  margin-right: -4rem;
+  margin-right: -5rem;
 }
 
 @media (max-width: 576px) {
