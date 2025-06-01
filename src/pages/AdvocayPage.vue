@@ -11,7 +11,8 @@ import img_landuse from '@/assets/img/Land-use-of-different-diets-Poore-Nemecek.
 
 const videos: Video[] = [
   { src: 'https://www.youtube.com/embed/cjIO73DIcOE?si=Yraxqq0oqRQ1Onow' }, // monbiot
-  { src: 'https://www.youtube.com/embed/h1jOqyjcO4g?si=yafG-5Bz04FB1Pvj' }, // clark
+  { src: 'https://www.youtube.com/embed/w5GmDRW975g?si=a6hMNF-4Rrr28730' }, // clark
+  { src: 'https://www.youtube.com/embed/NQiLly6Z1xs?si=DoFnEe6Fnfnj8UHY' }, // climate town dairy
 ]
 
 onMounted(() => {

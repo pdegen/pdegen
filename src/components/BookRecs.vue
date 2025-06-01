@@ -24,17 +24,17 @@ const books = ref<Book[]>([
     subtitle:
       'How a Handful of Scientists Obscured the Truth on Issues from Tobacco Smoke to Global Warming',
     author: 'Naomi Oreskes and Erik M. Conway',
-    cover: 'https://covers.openlibrary.org/b/id/7909667-L.jpg',
+    cover: 'img/book_merchants_of_doubt.jpeg',
     year: 2010,
     category: BookCategory.NonFiction,
     description:
-      "If you're curious to learn how the US arrived at a place where <a target='_blank' rel='noopener noreferrer' href='https://climatecommunication.gmu.edu/all/climate-change-in-the-american-mind-beliefs-and-attitudes-fall-2024/'>a third of the population</a> is either unaware or outright denies the scientific consensus on anthropogenic climate change, this is the book to read. You may have heard before that <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/exxon-knew-about-climate-change-almost-40-years-ago/'>Exxon Mobile</a> was a key driver in obscuring their own private research on climate change and spending millions to sow doubt about the science among the general public. But did you know that the same playbook was used time and again, from the ozone hole to acid rain to the environmental impact of DDT pesticides, often spearheaded by the same handful of former scientists turned industry mouthpieces? The authors trace a lineage of corporate-sponsored doubt-mongering that goes all the way back to the 1950s, when tobacco companies obscured the emerging scientific and medical consensus on the link between smoking and lung cancer. Crucially, the book shows how science denial is deeply intertwined with Cold War hysteria and free market ideology, funded by the private sector and conservative think tanks like The Heritage Foundation—yes, the one behind Project 2025 and <a target='_blank' rel='noopener noreferrer' href='https://forward.com/opinion/676036/antisemitism-heritage-foundation-project-esther/'>Project Esther</a>. Hard to think of an organization with a more damning track record for the future of humanity...",
+      "If you're curious to learn how the US arrived at a place where <a target='_blank' rel='noopener noreferrer' href='https://climatecommunication.gmu.edu/all/climate-change-in-the-american-mind-beliefs-and-attitudes-fall-2024/'>a third of the population</a> is either unaware or outright denies the scientific consensus on anthropogenic climate change, this is the book to read. You may have heard before that <a target='_blank' rel='noopener noreferrer' href='https://www.scientificamerican.com/article/exxon-knew-about-climate-change-almost-40-years-ago/'>Exxon Mobile</a> was a key driver in obscuring their own private research on climate change and spending millions to sow doubt about the science among the general public. But did you know that the same playbook was used time and again, from the ozone hole to acid rain to the environmental impact of DDT pesticides, often spearheaded by the same handful of former scientists turned industry mouthpieces? The authors trace a lineage of corporate-sponsored doubt-mongering that goes all the way back to the 1950s, when tobacco companies obscured the emerging scientific and medical consensus on the link between smoking and lung cancer. Crucially, the book shows how science denial is deeply intertwined with Cold War hysteria and free market ideology, funded by the private sector and conservative think tanks like The Heritage Foundation—yes, the one behind Project 2025 and <a target='_blank' rel='noopener noreferrer' href='https://forward.com/opinion/676036/antisemitism-heritage-foundation-project-esther/'>Project Esther</a>. Hard to think of an organization with a more disastrous impact on the future of humanity...",
   },
   {
     title: 'Doughnut Economics',
     subtitle: 'Seven Ways to Think Like a 21st-Century Economist',
     author: 'Kate Raworth',
-    cover: 'https://covers.openlibrary.org/b/id/8347419-L.jpg',
+    cover: 'img/book_doughnut_economics.jpeg',
     year: 2017,
     category: BookCategory.NonFiction,
     description:
@@ -44,7 +44,7 @@ const books = ref<Book[]>([
     title: 'Educated',
     subtitle: 'A Memoir',
     author: 'Tara Westover',
-    cover: 'https://covers.openlibrary.org/b/id/14832082-L.jpg',
+    cover: 'img/book_educated.jpeg',
     year: 2018,
     category: BookCategory.NonFiction,
     description:
@@ -54,18 +54,28 @@ const books = ref<Book[]>([
     title: 'Doppelganger',
     subtitle: 'A Trip into the Mirror World',
     author: 'Naomi Klein',
-    cover: 'https://covers.openlibrary.org/b/id/14377472-L.jpg',
+    cover: 'img/book_doppelganger.jpeg',
     year: 2023,
     category: BookCategory.NonFiction,
     description:
       "Brilliant memoir and insightful analysis of the resurgence of the far-right in the West. Of particular importance is the way that far-right politics co-opts leftist talking points and twists them to serve reactionary ends. Sadly, this is not a new story: divide and conquer is the oldest trick in the oligarch's playbook, promising minor economic concessions to the in-group while taking advantage of rising far-right sentiments to keep regular people in a constant state of manufactured hysteria about 'the Other'. What is new, however, is the way that social media has completely turbo-charged the spread of misinformation and the powerful allure of conspiracy theories, making it easier than ever to divert working-class resentment towards the latest scapegoat du jour. For a discussion of the book, see also <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=FxQ3EuEAOz0'>Ash Sarkar's interview with Naomi Klein</a> for Novara Media. Another crucial read is Klein's follow-up essay <a target='_blank' rel='noopener noreferrer' href='https://www.theguardian.com/us-news/ng-interactive/2025/apr/13/end-times-fascism-far-right-trump-musk'>The Rise of End Times Fascism</a>, co-written with Astra Taylor for The Guardian.",
   },
   {
+    title: 'Bad Science',
+    subtitle: 'Quacks, Hacks, and Big Pharma Flacks',
+    author: 'Ben Goldacre',
+    cover: 'img/book_bad_science.jpeg',
+    year: 2008,
+    category: BookCategory.NonFiction,
+    description:
+      "Ben Goldacre is a physician and academic who wrote The Guardian's <i>Bad Science</i> column from 2003 until 2011, vigilantly debunking miracle cure peddlers, pseudoscientific claims, and the misleading sensationalism pervading mainstream science reporting. Goldacre's eponymous book is an important contribution to the urgent task of raising scientific literacy, effectively breaking down the basics of evidence-based medicine, cognitive biases, and statistical reasoning with clarity, humor, and an abundance of illustrative examples.<br><br>Sadly, this book's relevance has only skyrocketed since its first publication in 2008—two years after the peak of the British media's infamous MMR health scare. With the advancement of generative AI, the rise of social media influencers, and the fundamental brokenness of US politics finally reaching its logical end point as con men and crackpots like RFK Jr. and Elon Musk wreak havoc on the public, the examples given in this book seem almost quaint by comparison. Nonetheless, this book offers vital tools to steel the reader against quackery and <a href='https://www.currentaffairs.org/news/2022/12/we-live-in-the-age-of-the-bullshitter' target='_blank' rel='noopener noreferrer'>bullshitters</a> in the post-truth era.<br><br>Recommended companion read: <i>Merchants of Doubt</i> by Naomi Oreskes and Erik M. Conway.",
+  },
+
+  {
     title: 'Road to Nowhere',
     subtitle: 'What Silicon Valley Gets Wrong about the Future of Transportation',
     author: 'Paris Marx',
-    cover:
-      'https://upload.wikimedia.org/wikipedia/en/thumb/b/b8/Road_to_Nowhere_%282022_book%29.jpg/250px-Road_to_Nowhere_%282022_book%29.jpg',
+    cover: 'img/book_road_to_nowhere.jpeg',
     year: 2022,
     category: BookCategory.NonFiction,
     description: 'Description coming soon...',
@@ -75,8 +85,7 @@ const books = ref<Book[]>([
     title: 'Foundations of Economics',
     subtitle: "A Beginner's Companion",
     author: 'Yanis Varoufakis',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348944275i/2018348.jpg',
+    cover: 'img/book_foundations_of_economics.jpeg',
     year: 1998,
     category: BookCategory.NonFiction,
     description: 'Description coming soon...',
@@ -92,16 +101,6 @@ const books = ref<Book[]>([
     description: 'Description coming soon...',
   },
   {
-    title: 'This Is Vegan Propaganda',
-    subtitle: '(and Other Lies the Meat Industry Tells You)',
-    author: 'Ed Winters',
-    cover: 'https://covers.openlibrary.org/b/id/14233190-L.jpg',
-    year: 2022,
-    category: BookCategory.NonFiction,
-    description:
-      "A comprehensive overview making the case for (you guessed it) veganism. Covers most of the important topics: ethics and animal welfare, environment and climate, nutrition and health, and countering the prevailing narrative. Winters also runs a successful YouTube channel under the name <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/@ed.winters/videos'>Earthling Ed</a>, featuring a mix of commentary videos and debates where he (amicably) dismantles his interlocutors’ arguments. His <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=Z3u7hXpOm58'>university speech</a> can be used as an excellent introduction to veganism.",
-  },
-  {
     title: 'The Myth of American Idealism',
     subtitle: 'How U.S. Foreign Policy Endangers the World',
     author: 'Noam Chomsky and Nathan J. Robinson',
@@ -109,6 +108,16 @@ const books = ref<Book[]>([
     year: 2024,
     category: BookCategory.NonFiction,
     description: 'Description coming soon...',
+  },
+  {
+    title: 'This Is Vegan Propaganda',
+    subtitle: '(and Other Lies the Meat Industry Tells You)',
+    author: 'Ed Winters',
+    cover: 'https://covers.openlibrary.org/b/id/14233190-L.jpg',
+    year: 2022,
+    category: BookCategory.NonFiction,
+    description:
+      "A comprehensive overview making the case for (you guessed it) veganism. Covers most of the important topics: ethics and animal welfare, environment and climate, nutrition and health, and countering the prevailing narrative. Winters also runs a successful YouTube channel under the name <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/@ed.winters/videos'>Earthling Ed</a>, featuring a mix of commentary videos and debates where he (amicably) dismantles his interlocutors’ arguments with ease. His <a target='_blank' rel='noopener noreferrer' href='https://www.youtube.com/watch?v=Z3u7hXpOm58'>university speech</a> can be used as an excellent introduction to veganism.",
   },
   {
     title: 'Kindred',
