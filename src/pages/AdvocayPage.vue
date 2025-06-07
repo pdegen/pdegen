@@ -160,6 +160,7 @@ onMounted(() => {
             ></strong
           >
         </p>
+        <p>Richardson et al., <i>Science Advances</i>, 2023.</p>
         <p class="text-start fst-italic">
           Our model results demonstrate that one of the <strong>most powerful means</strong> that
           humanity has at its disposal to combat climate change is respecting the
@@ -194,9 +195,11 @@ onMounted(() => {
       <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
         <p class="text-center fw-bold">
           <a href="https://www.penguinrandomhouse.com/books/645538/regenesis-by-george-monbiot/"
-            >George Monbiot — Regenesis</a
+            >Regenesis: Feeding the World Without Devouring the Planet</a
           >
         </p>
+
+        <p>George Monbiot, <i>Penguin Random House</i>, 2022.</p>
         <p class="text-start fst-italic">
           By 2050, the human population of the planet will rise to between 9 and 10 billion. In
           principle, the world already produces enough food for between 10 and 14 billion. The
@@ -228,8 +231,11 @@ onMounted(() => {
 
       <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
         <p class="text-center fw-bold">
-          <a href="https://www.ipcc.ch/srccl/chapter/chapter-5/">IPCC Executive Summary</a>
+          <a href="https://www.ipcc.ch/srccl/chapter/chapter-5/"
+            >Special Report: Climate Change and Land</a
+          >
         </p>
+        <p>IPCC, 2019.</p>
         <p class="text-start fst-italic">
           In summary, there is <strong>significant potential mitigation</strong> (high confidence)
           arising from the <strong>adoption of diets</strong> in line with dietary recommendations
@@ -254,16 +260,41 @@ onMounted(() => {
 
       <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
         <p class="text-center fw-bold">
-          <a href="https://ourworldindata.org/land-use-diets">Our World in Data</a>
+          <a href="https://ourworldindata.org/land-use-diets"
+            >If the world adopted a plant-based diet, we would reduce global agricultural land use
+            from 4 to 1 billion hectares</a
+          >
         </p>
+        <p>Hannah Ritchie, <i>Our World in Data</i>, 2021.</p>
         <p class="text-start fst-italic">
           If the world adopted a <strong>plant-based diet</strong>, we would
-          <strong>reduce global agricultural land use</strong> from 4 to 1 billion hectares. [...]
+          <strong>reduce global agricultural land use from 4 to 1 billion hectares</strong>. [...]
           Less than half – only 48% – of the world's cereals are eaten by humans. 41% is used for
           animal feed and 11% for biofuels. [...] Not all crops provide low-quality protein –
           legumes such as peas, beans, lentils, and products such as tofu have a good amino acid
           profile; when mixed with cereals in a person's diet,
           <strong>it's possible to get the full range of essential elements</strong>.
+        </p>
+      </div>
+
+      <div class="alert alert-secondary col-12 col-md-6 mx-auto mt-4" role="alert">
+        <p class="text-center fw-bold">
+          <a href="https://www.science.org/doi/10.1126/science.aaq0216"
+            >Reducing food's environmental impacts through producers and consumers</a
+          >
+        </p>
+        <p>Poore & Nemecek, <i>Science</i>, 2018.</p>
+        <p class="text-start fst-italic">
+          Food's environmental impacts are created by millions of diverse producers. To identify
+          solutions that are effective under this heterogeneity, we consolidated data covering five
+          environmental indicators; 38,700 farms; and 1600 processors, packaging types, and
+          retailers. Impact can vary 50-fold among producers of the same product, creating
+          substantial mitigation opportunities.[...]
+          <strong
+            >Most strikingly, impacts of the lowest-impact animal products typically exceed those of
+            vegetable substitutes, providing new evidence for the importance of dietary
+            change.</strong
+          >
         </p>
       </div>
     </div>
