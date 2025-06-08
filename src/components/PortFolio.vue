@@ -97,7 +97,7 @@ const selectedItem = ref<PortfolioItem | null>(null)
                   :alt="selectedItem?.title"
                 />
                 <!-- Portfolio Modal - Text-->
-                <p class="mb-4 text-center" v-html="selectedItem?.description"></p>
+                <p class="mb-4 text-start" v-html="selectedItem?.description"></p>
                 <button class="btn btn-primary" data-bs-dismiss="modal">
                   <i class="fas fa-xmark fa-fw"></i>
                   Close Window

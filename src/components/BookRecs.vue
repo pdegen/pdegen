@@ -38,7 +38,7 @@ const books = ref<Book[]>([
     year: 2017,
     category: BookCategory.NonFiction,
     description:
-      "Ask an orthodox economist to sketch a figure of the ideal development of the economy and you'll likely get an exponentially growing GDP curve—truncated at some point for practical reasons, but implied to be chasing after infinity, forever. A triumphant story of eternal progress enabled by the powers of capitalism and the free market. However, after a hearty laugh you decide that \"line go up forever\" is not a satisfying answer, so you dare the economist to explicitly draw the asymptotic behavior of this curve with respect to time. It stands to reason that this line will have to plateau at some point. How do we know when that point is reached? What if we have already overshot the optimum plateau? <i>What even is the purpose of the economy?</i> <br><br> For serious answers, you will have to look beyond the narrow confines of 20th century neoclassical economics (see Yanis Varoufakis, <i>Foundations of Economics</i>) and venture into the realm of political and heterodox economics, as exemplified by Kate Raworth in this book. Rather than advocating for strict degrowth like Jason Hickel (cf. <i>Less Is More</i>), Raworth advocates for a growth-agnostic economy that is distributive and regenerative by design. Crucially, the purpose of economic policy should be to balance the economy within the Goldilocks zone defined by two concentric circles: the inner circle represents the minimum level of economic development necessary to achieve universal human rights for all; the outer circle represents the maximum level of economic activity that can be sustained while keeping within the nine <a href='https://www.stockholmresilience.org/research/planetary-boundaries.html' target='_blank' rel='noopener noreferrer'>planetary boundaries</a> established by Earth systems science. I don't know about you, but this sounds much more appealing than the alternative of a burning planet ruled over by a tiny billionaire class telling the rest of us \"all is well, GDP grew by 1.2% this quarter, now please continue being distracted fighting amongst yourselves\"<br><br>Recommended companion read: <i>Less Is More</i> by Jason Hickel.",
+      "Ask an orthodox economist to sketch a figure of the ideal development of the economy and you'll likely get an exponentially growing GDP curve—truncated at some point for practical reasons, but implied to be chasing after infinity, forever. A triumphant story of eternal progress enabled by the powers of capitalism and the free market. However, after a hearty laugh you decide that \"line go up forever\" is not a satisfying answer, so you dare the economist to explicitly draw the asymptotic behavior of this curve with respect to time. It stands to reason that this line will have to plateau at some point. How do we know when that point is reached? What if we have already overshot the optimum plateau? <i>What even is the purpose of the economy?</i> <br><br> For serious answers, you will have to look beyond the narrow confines of 20th century neoclassical economics and venture into the realm of political and heterodox economics, as exemplified by Kate Raworth in this book. Rather than advocating for strict degrowth like Jason Hickel (cf. <i>Less Is More</i>), Raworth advocates for a growth-agnostic economy that is distributive and regenerative by design. Crucially, the purpose of economic policy should be to balance the economy within the Goldilocks zone defined by two concentric circles: the inner circle represents the minimum level of economic development necessary to achieve universal human rights for all; the outer circle represents the maximum level of economic activity that can be sustained while keeping within the nine <a href='https://www.stockholmresilience.org/research/planetary-boundaries.html' target='_blank' rel='noopener noreferrer'>planetary boundaries</a> established by Earth systems science. I don't know about you, but this sounds much more appealing than the alternative of a burning planet ruled over by a tiny billionaire class telling the rest of us \"all is well, GDP grew by 1.2% this quarter, now please continue being distracted fighting amongst yourselves\".<br><br>Recommended companion reasd: <i>Less Is More</i> by Jason Hickel; <i>Foundations of Economics</i> by Yanis Varoufakis.",
   },
   {
     title: 'Educated',
@@ -72,6 +72,17 @@ const books = ref<Book[]>([
   },
 
   {
+    title: 'Regenesis',
+    subtitle: 'Feeding the World Without Devouring the Planet',
+    author: 'George Monbiot',
+    cover: 'img/book_regenesis.jpeg',
+    year: 2022,
+    category: BookCategory.NonFiction,
+    description:
+      "The challenge posed in this book's title is undoubtedly of monumental importance to us all, though sadly it doesn't get anywhere near the amount of attention it deserves. How can we achieve high-yield, low-impact foods that are healthy, sustainable, universally accessible, and don't leave us vulnerable to systemic shocks, corporate monopolization, and the existential threats of multiple transgressed <a href='http://localhost:5173/pdegen/advocacy#climate' target='_blank' rel='noopener noreferrer' >planetary boundaries</a>? George Monbiot's <i>Regenesis</i> is an urgent and extensively referenced contribution to this challenge, offering empirically grounded and politically incisive analysis driven by a deep and palpable love for the living world.<br><br>Topics discussed include: 1) the importance of soil ecology and the degree to which it is still understudied; 2) agricultural sprawl and the rise of the 'Global Standard Farm' as arguably the most ecologically destructive force on the planet—politically sustained by corporate lobbying and perverse agricultural subsidies, and culturally reinforced by the enduring myth of the pastoral idyll; 3) a complex systems perspective highlighting the vulnerability of tightly connected, monopolistic networks to systemic shocks—exemplified by the global food system; 4) the challenges and opportunities of the agroecology and food sovereignty movements, as well as food technologies such as precision fermentation, perennial crops, no-till farming, and more; 5) the importance of anti-trust laws and \"open source\" food technology to prevent corporate monopolization and regression to the business practices that got us into this mess in the first place; of ensuring that farmers working in destructive legacy industries are given the support to transition to greener ventures; of restoring ecosystems in the lands freed up by transitioning away from the bewildering wastefulness of dominant farming practices; and much more.<br><br>The wide range of topics covered reflects the reality that there are no panaceas—as Monbiot makes clear, every promising solution has its use cases and limitations, and the key to global food security will likely be a diversified mix of approaches tailored to local circumstances.<br><br>Recommended companion reads: <i>Doughnut Economics</i> by Kate Raworth; <i>This Is Vegan Propaganda</i> by Ed Winters.",
+  },
+
+  {
     title: 'Road to Nowhere',
     subtitle: 'What Silicon Valley Gets Wrong about the Future of Transportation',
     author: 'Paris Marx',
@@ -80,7 +91,6 @@ const books = ref<Book[]>([
     category: BookCategory.NonFiction,
     description: 'Description coming soon...',
   },
-
   {
     title: 'Foundations of Economics',
     subtitle: "A Beginner's Companion",
@@ -123,8 +133,7 @@ const books = ref<Book[]>([
     title: 'Kindred',
     subtitle: '',
     author: 'Octavia Butler',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1339423248i/60931.jpg',
+    cover: 'img/book_kindred.jpeg',
     year: 1979,
     category: BookCategory.Fiction,
     description: 'Description coming soon...',
@@ -133,8 +142,7 @@ const books = ref<Book[]>([
     title: 'The Dispossessed',
     subtitle: 'An Ambiguous Utopia',
     author: 'Ursula K. Le Guin',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1353467455i/13651.jpg',
+    cover: 'img/book_dispossessed.jpg',
     year: 1974,
     category: BookCategory.Fiction,
     description: 'Description coming soon...',
@@ -143,8 +151,7 @@ const books = ref<Book[]>([
     title: 'The Remains of the Day',
     subtitle: '',
     author: 'Kazuo Ishiguro',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327128714i/28921.jpg',
+    cover: 'img/book_remains_of_the_day.jpg',
     year: 1989,
     category: BookCategory.Fiction,
     description: 'Description coming soon...',
@@ -163,8 +170,7 @@ const books = ref<Book[]>([
     title: 'The Master and Margarita',
     subtitle: '',
     author: 'Mikhail Bulgakov',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327867963i/117833.jpg',
+    cover: 'img/book_master_and_margarita.jpeg',
     year: 1967,
     category: BookCategory.Fiction,
     description: 'Description coming soon...',
@@ -183,8 +189,7 @@ const books = ref<Book[]>([
     title: 'Invisible Cities',
     subtitle: '',
     author: 'Italo Calvino',
-    cover:
-      'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1468623303i/9809.jpg',
+    cover: 'img/book_invisible_cities.jpg',
     year: 1972,
     category: BookCategory.Fiction,
     description: 'Description coming soon...',

@@ -202,13 +202,17 @@ onMounted(() => {
         <p>George Monbiot, <i>Penguin Random House</i>, 2022.</p>
         <p class="text-start fst-italic">
           By 2050, the human population of the planet will rise to between 9 and 10 billion. In
-          principle, the world already produces enough food for between 10 and 14 billion. The
-          problem is that an ever smaller proportion of this embarrassment of riches is feeding
-          people directly. Why? Because while the human population growth rate has fallen to 1.05
-          per cent a year, the growth rate of the livestock population has risen to 2.4 per cent a
-          year. By 2050, to put it in brutal terms, the extra humans on the planet will weigh a
-          little over 100 million tonnes, whereas, unless the current trend is disrupted, the extra
-          farm animals will weigh 400 million tonnes.
+          principle,
+          <strong
+            >the world already produces enough food for between 10 and 14 billion. The problem is
+            that an ever smaller proportion of this embarrassment of riches is feeding people
+            directly.</strong
+          >
+          Why? Because while the human population growth rate has fallen to 1.05 per cent a year,
+          the growth rate of the livestock population has risen to 2.4 per cent a year. By 2050, to
+          put it in brutal terms, the extra humans on the planet will weigh a little over 100
+          million tonnes, whereas, unless the current trend is disrupted, the extra farm animals
+          will weigh 400 million tonnes.
           <strong
             >The biggest population crisis is not the growth in human numbers, but the growth in
             livestock numbers.</strong
