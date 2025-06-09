@@ -304,10 +304,9 @@ onMounted(() => {
     </div>
   </section>
 
-  <div class="col-10 col-md-4 mx-auto">
+  <div class="col-12 col-md-5 mx-auto">
     <VideoCarousel :videos="videos" />
   </div>
-
   <!-- Amnesty Section -->
   <section class="page-section bg-light" id="amnesty">
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">

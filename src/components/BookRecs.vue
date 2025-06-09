@@ -79,7 +79,7 @@ const books = ref<Book[]>([
     year: 2022,
     category: BookCategory.NonFiction,
     description:
-      "The challenge posed in this book's title is undoubtedly of monumental importance to us all, though sadly it doesn't get anywhere near the amount of attention it deserves. How can we achieve high-yield, low-impact foods that are healthy, sustainable, universally accessible, and don't leave us vulnerable to systemic shocks, corporate monopolization, and the existential threats of multiple transgressed <a href='http://localhost:5173/pdegen/advocacy#climate' target='_blank' rel='noopener noreferrer' >planetary boundaries</a>? George Monbiot's <i>Regenesis</i> is an urgent and extensively referenced contribution to this challenge, offering empirically grounded and politically incisive analysis driven by a deep and palpable love for the living world.<br><br>Topics discussed include: 1) the importance of soil ecology and the degree to which it is still understudied; 2) agricultural sprawl and the rise of the 'Global Standard Farm' as arguably the most ecologically destructive force on the planet—politically sustained by corporate lobbying and perverse agricultural subsidies, and culturally reinforced by the enduring myth of the pastoral idyll; 3) a complex systems perspective highlighting the vulnerability of tightly connected, monopolistic networks to systemic shocks—exemplified by the global food system; 4) the challenges and opportunities of the agroecology and food sovereignty movements, as well as food technologies such as precision fermentation, perennial crops, no-till farming, and more; 5) the importance of anti-trust laws and \"open source\" food technology to prevent corporate monopolization and regression to the business practices that got us into this mess in the first place; of ensuring that farmers working in destructive legacy industries are given the support to transition to greener ventures; of restoring ecosystems in the lands freed up by transitioning away from the bewildering wastefulness of dominant farming practices; and much more.<br><br>The wide range of topics covered reflects the reality that there are no panaceas—as Monbiot makes clear, every promising solution has its use cases and limitations, and the key to global food security will likely be a diversified mix of approaches tailored to local circumstances.<br><br>Recommended companion reads: <i>Doughnut Economics</i> by Kate Raworth; <i>This Is Vegan Propaganda</i> by Ed Winters.",
+      "The challenge posed in this book's title is undoubtedly of monumental importance to us all, though sadly it doesn't get anywhere near the amount of attention it deserves. How can we achieve high-yield, low-impact foods that are healthy, sustainable, universally accessible, and don't leave us vulnerable to systemic shocks, corporate monopolization, and the existential threats of multiple transgressed <a href='https://pdegen.github.io/pdegen/advocacy#climate' target='_blank' rel='noopener noreferrer' >planetary boundaries</a>? George Monbiot's <i>Regenesis</i> is an urgent and extensively referenced contribution to this challenge, offering empirically grounded and politically incisive analysis driven by a deep and palpable love for the living world.<br><br>Topics discussed include: 1) the importance of soil ecology and the degree to which it is still understudied; 2) agricultural sprawl and the rise of the 'Global Standard Farm' as arguably the most ecologically destructive force on the planet—politically sustained by corporate lobbying and perverse agricultural subsidies, and culturally reinforced by the enduring myth of the pastoral idyll; 3) a complex systems perspective highlighting the vulnerability of tightly connected, monopolistic networks to systemic shocks—exemplified by the global food system; 4) the challenges and opportunities of the agroecology and food sovereignty movements, as well as food technologies such as precision fermentation, perennial crops, no-till farming, and more; 5) the importance of anti-trust laws and \"open source\" food technology to prevent corporate monopolization and regression to the business practices that got us into this mess in the first place; of ensuring that farmers working in destructive legacy industries are given the support to transition to greener ventures; of restoring ecosystems in the lands freed up by transitioning away from the bewildering wastefulness of dominant farming practices; and much more.<br><br>The wide range of topics covered reflects the reality that there are no panaceas—as Monbiot makes clear, every promising solution has its use cases and limitations, and the key to global food security will likely be a diversified mix of approaches tailored to local circumstances.<br><br>Recommended companion reads: <i>Doughnut Economics</i> by Kate Raworth; <i>This Is Vegan Propaganda</i> by Ed Winters.",
   },
 
   {
@@ -256,8 +256,13 @@ const scrollRight = () => {
     </div>
 
     <div class="d-flex justify-content-center">
-      <button class="btn btn-lg p-3 col-auto" type="button" @click="scrollLeft">
-        <i class="fa-solid fa-chevron-left"></i>
+      <button
+        class="btn col-auto mx-auto"
+        type="button"
+        @click="scrollLeft"
+        style="padding: 0.5rem"
+      >
+        <i class="fa-solid fa-chevron-left fa-xl"></i>
       </button>
       <div
         class="scroll-container d-flex justify-content-start col-10 cl-md-8"
@@ -286,10 +291,16 @@ const scrollRight = () => {
           </div>
         </div>
       </div>
-      <button class="btn btn-lg p-3 col-auto" type="button" @click="scrollRight">
-        <i class="fa-solid fa-chevron-right"></i>
+      <button
+        class="btn col-auto mx-auto"
+        type="button"
+        @click="scrollRight"
+        style="padding: 0.5rem"
+      >
+        <i class="fa-solid fa-chevron-right fa-xl"></i>
       </button>
     </div>
+
     <!-- Modal -->
     <div class="modal fade" ref="modal" tabindex="-1">
       <div class="modal-dialog modal-lg">

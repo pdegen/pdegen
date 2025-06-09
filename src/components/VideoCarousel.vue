@@ -10,61 +10,66 @@ defineProps<{
 
 <template>
   <div id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#videoCarousel"
-      data-bs-slide="prev"
-    >
-      <i class="fa-solid fa-chevron-left text-dark fa-2xl"></i>
-    </button>
-    <div class="carousel-inner">
-      <div
-        v-for="(video, index) in videos"
-        :key="index"
-        :class="['carousel-item', { active: index === 0 }]"
+    <div class="col-1">
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#videoCarousel"
+        data-bs-slide="prev"
       >
-        <div class="ratio ratio-16x9">
-          <iframe
-            width="560"
-            height="315"
-            :src="video.src"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
+        <i class="fa-solid fa-chevron-left text-dark fa-2xl"></i>
+      </button>
+    </div>
+    <div class="col-10 mx-auto">
+      <div class="carousel-inner">
+        <div
+          v-for="(video, index) in videos"
+          :key="index"
+          :class="['carousel-item', { active: index === 0 }]"
+        >
+          <div class="ratio ratio-16x9">
+            <iframe
+              width="560"
+              height="315"
+              :src="video.src"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
-
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#videoCarousel"
-      data-bs-slide="next"
-    >
-      <i class="fa-solid fa-chevron-right text-dark fa-2xl"></i>
-    </button>
+    <div class="col-1">
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#videoCarousel"
+        data-bs-slide="next"
+      >
+        <i class="fa-solid fa-chevron-right text-dark fa-2xl"></i>
+      </button>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .carousel-control-prev {
-  margin-left: -5rem;
+  width: 10%;
 }
 
 .carousel-control-next {
-  margin-right: -5rem;
+  width: 10%;
 }
 
-@media (max-width: 576px) {
+/* @media (max-width: 576px) {
   .carousel-control-prev {
-    margin-left: -3rem;
+    margin-left: -1rem;
   }
   .carousel-control-next {
-    margin-right: -3rem;
+    margin-right: -1rem;
   }
-}
+} */
 </style>
