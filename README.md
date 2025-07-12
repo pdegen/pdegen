@@ -2,7 +2,7 @@
 
 ## Interests
 
-Data science, machine learning, bioinformatics, open science, real-time rendering applications, web development
+Open science, data science, bioinformatics, real-time rendering applications, web development, machine learning.
 
 ## Languages 
 

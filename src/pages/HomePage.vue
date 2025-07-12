@@ -256,6 +256,19 @@ const isDev = import.meta.env.MODE === 'development'
             </div>
           </div>
         </div>
+          <div class="col-md-6 mb-4">
+          <h5>Reproducibility (Git, Quarto, Make, Snakemake, Docker)</h5>
+          <div class="progress">
+            <div
+              class="progress-bar bg-primary"
+              role="progressbar"
+              data-value="75"
+              style="width: 0%"
+            >
+              0%
+            </div>
+          </div>
+        </div>
         <div class="col-md-6 mb-4">
           <h5>Game Development (Unity, C#)</h5>
           <div class="progress">
@@ -289,6 +302,19 @@ const isDev = import.meta.env.MODE === 'development'
               class="progress-bar bg-primary"
               role="progressbar"
               data-value="35"
+              style="width: 0%"
+            >
+              0%
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <h5>3D Work and Video Editing (Blender)</h5>
+          <div class="progress">
+            <div
+              class="progress-bar bg-primary"
+              role="progressbar"
+              data-value="15"
               style="width: 0%"
             >
               0%
