@@ -169,7 +169,7 @@ const isDev = import.meta.env.MODE === 'development'
 
       <h5>RESEARCH ARTICLES</h5>
       <div>
-        <strong>Degen</strong> & Medo. (2025). Replicability of bulk RNA-Seq differential expression
+        - <strong>Degen</strong> & Medo. (2025). Replicability of bulk RNA-Seq differential expression
         and enrichment analysis results for small cohort sizes. <em>PLoS Computational Biology</em>.
         <a
           href="https://doi.org/10.1371/journal.pcbi.1011630"
@@ -182,7 +182,14 @@ const isDev = import.meta.env.MODE === 'development'
 
       <h5>REPORTS</h5>
       <div>
-        Pawel, <strong>Degen</strong>, Fraga González, Bollmann, Masoero, Guilloteau & Asfar.
+        - <strong>Degen</strong>, Meesters, Fraga González, Pawel & Molo.
+        (2025). Primer: Managing Complex Data Analysis Workflows. <em>Zenodo</em>.
+        <a href="https://doi.org/10.5281/zenodo.15789796" target="_blank" rel="noopener noreferrer"
+          >doi: 10.5281/zenodo.15789796</a
+        >
+      </div>
+      <div>
+        - Pawel, <strong>Degen</strong>, Fraga González, Bollmann, Masoero, Guilloteau & Asfar.
         (2024). Insights from the Reproducibility Hackathon at the Swiss Reproducibility Conference
         2024. <em>Zenodo</em>.
         <a href="https://doi.org/10.5281/zenodo.12516514" target="_blank" rel="noopener noreferrer"
@@ -193,7 +200,7 @@ const isDev = import.meta.env.MODE === 'development'
 
       <h5>PRESENTATIONS</h5>
       <div>
-        <strong>Degen</strong>. (2025). PhD Retrospective: RNA-Seq, Replicability, Open Science.
+        - <strong>Degen</strong>. (2025). PhD Retrospective: RNA-Seq, Replicability, Open Science.
         <em>Zenodo</em>.
         <a href="https://doi.org/10.5281/zenodo.15263835" target="_blank" rel="noopener noreferrer"
           >doi: 10.5281/zenodo.15263835</a
@@ -201,13 +208,23 @@ const isDev = import.meta.env.MODE === 'development'
       </div>
       <br />
 
+
+      <h5>WORKSHOPS</h5>
+      <div>
+        - <strong>Degen</strong>. (2025). Confronting Anti-Science Narratives and Rebuilding Trust. <em>Rethinking Economics Summer School.</em>
+      </div>
+        <div>
+        - Pawel & <strong>Degen</strong>. (2024). Reproducibility Hackathon. <em>Swiss Reproducibility Conference.</em>
+      </div>
+      <br />
+
       <h5>THESES</h5>
       <div>
-        <strong>Degen</strong>. (2024). Challenges in Bulk and Single-cell RNA-Seq Analysis:
+        - <strong>Degen</strong>. (2024). Challenges in Bulk and Single-cell RNA-Seq Analysis:
         Investigating Robustness and Replicability. <em>PhD Thesis</em>. University of Bern.
       </div>
       <div>
-        <strong>Degen</strong>. (2020). Straw Trackers for NA64 Electronuclear Backgound Studies.
+        - <strong>Degen</strong>. (2020). Straw Trackers for NA64 Electronuclear Backgound Studies.
         <em>Master Thesis</em>. ETH Zurich.
       </div>
     </div>
@@ -271,7 +288,7 @@ const isDev = import.meta.env.MODE === 'development'
             <div
               class="progress-bar bg-primary"
               role="progressbar"
-              data-value="30"
+              data-value="35"
               style="width: 0%"
             >
               0%
